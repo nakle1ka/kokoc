@@ -1,0 +1,36 @@
+@import '@/SCSS/variables';
+.MainNews{
+    max-width: 1350px;
+    margin-bottom: 50px
+}
+.MainContent{
+    max-width: 1350px;
+    box-shadow: 0 40px 40px rgba(0, 0, 0, .3);
+}
+
+.MainNewsImage{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.MainNewsLogo{
+    font-size: clamp(30px,6vw,60px);
+    line-height: 80%;
+    transition: color 250ms;
+}
+.MainNewsLogo:hover{
+    color:$mainRed;
+}
+
+.MainNewsTextBlock{
+    padding:30px 35px;
+    backdrop-filter: blur(30px);
+}
+
+.MainNewsDescription{
+    margin-top: 30px;
+    font-size: 16px;
+    line-height: 95%;
+}
