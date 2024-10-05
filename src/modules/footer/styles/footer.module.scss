@@ -1,0 +1,30 @@
+@import "@/SCSS/variables";
+@import "@/SCSS/mixins";
+
+.container {
+    background-color: $darkGray;
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+
+    .info {
+        @include FlexCenter(column);
+        color: $opacityFont;
+        width: clamp(50px, 30vw, 500px) !important;
+    }
+
+    .links {
+        
+        .item {
+            font-size: clamp(10px, 5vw, 25px);
+            color: $opacityFont;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import "@/SCSS/mixins.scss";
+
+#container {
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: clamp(10px, 3vw, 18px);
+}
+
+#mobileContainer {
+    box-sizing: border-box;
+    padding: 5px;
+    font-size: 23px;
+}
+
+.content {
+    .link {
+        display: block;
+        padding: 10px;
+
+        &:hover {
+            background-color: ghostwhite;
+        }
+
+    }
+}

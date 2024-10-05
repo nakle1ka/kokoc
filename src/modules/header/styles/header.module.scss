@@ -1,0 +1,54 @@
+@import "@/SCSS/mixins.scss";
+@import "@/SCSS/variables.scss";
+
+.header {
+    position: sticky;
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+
+    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .leftSide {
+        @include FlexCenter;
+        gap: 10px;
+
+        .logo {
+            width: 85% !important;
+            aspect-ratio: 1 / 1;
+        }
+
+        .headerNav ul {
+            @include FlexCenter;
+            gap: 10px;
+
+            .navItem {
+                font-size: clamp(10px, 3vw, 18px);
+                font-weight: 500;
+
+                &:hover {
+                    color: $mainRed;
+                }
+            }
+        }
+    }
+
+    .rightSide {
+        display: flex;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .header > .leftSide > .headerNav {
+        display: none;
+    }
+}
