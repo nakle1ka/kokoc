@@ -1,11 +1,12 @@
-'use client'
+import Image from "next/image";
 
-import { MainButton } from "@/components/ui/mainButton/mainButton";
+import { TeamPhoto } from "@/modules/teamPhoto/teamPhoto";
+
 
 export default function Home() {
   return (
-    <div>
-      <MainButton text="d" onClick={() => console.log("test")}/>
-    </div>
+    <>
+      <TeamPhoto />
+    </>
   );
 }
