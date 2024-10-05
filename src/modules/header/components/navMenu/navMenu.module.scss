@@ -1,15 +1,25 @@
 @import "@/SCSS/mixins.scss";
 
-#container {
+@mixin Container($isMobile: false) {
     box-sizing: border-box;
     padding: 5px;
-    font-size: clamp(10px, 3vw, 18px);
+    background-color: rgba(255, 255, 255, 0);
+
+    @if $isMobile == false {
+        font-size: clamp(10px, 3vw, 18px);
+    }
+
+    @else {
+        font-size: 23px;
+    }
+}
+
+#container {
+    @include Container(false)
 }
 
 #mobileContainer {
-    box-sizing: border-box;
-    padding: 5px;
-    font-size: 23px;
+    @include Container(true)
 }
 
 .content {
