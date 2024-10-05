@@ -1,15 +1,9 @@
-@import '@/SCSS/mixins';
 @import '@/SCSS/variables';
-.NewsContainer {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 40px;
-	padding: 0px 50px;
-}
+
 
 .pageContainer {
 	min-height: 100vh;
-	background-image: linear-gradient(159deg,white 80%,rgb(227, 48, 70) 80%);
+	background-image: linear-gradient(119deg,white 80%,rgb(227, 48, 70) 80%);
 	span {
 		display: block;
 		color: $mainRed;
@@ -17,20 +11,15 @@
 	}
 }
 
-.NewsLogo {
-	color: $darkGreen;
-	margin-bottom: 50px;
-	line-height: 90%;
-	padding-left: 50px;
-	font-size: clamp(45px, 6vw, 68px);
-}
+
 .CenterContainer {
 	max-width: 1350px;
 	margin: 0 auto;
-	padding: 0px 50px;
 }
 
-
+.TeamContainer{
+    padding: 0px 40px;
+}
 
 @media (max-width: 768px) {
 	.NewsContainer {
@@ -45,7 +34,5 @@
     .NewsContainer {
 		grid-template-columns: 1fr 1fr;
 	}
-    .ImageDecor{
-        display: none;
-    }
+
 }

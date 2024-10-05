@@ -43,6 +43,11 @@
 	line-height: 110%;
 }
 
+.PlayerNumber{
+	color:white;
+	font-size: clamp(18px,4vw,24px);
+}
+
 .Card:before {
 	background: linear-gradient(
 		180deg,

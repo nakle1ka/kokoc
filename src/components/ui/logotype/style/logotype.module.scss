@@ -1,0 +1,8 @@
+@import '@/SCSS/variables';
+
+.Logo {
+	color: $darkGreen;
+	margin-bottom: 50px;
+	line-height: 90%;
+	font-size: clamp(45px, 6vw, 68px);
+}

@@ -2,21 +2,19 @@ import cl from './styles/page.module.scss'
 import { FC } from 'react'
 import MainNews from '@/modules/news/MainNews/MainNews'
 import NewsFilter from '@/modules/news/NewsFilter/NewsFilter'
-import Unpacking from '@/modules/news/Unpacking'
+import Logotype from '@/components/ui/logotype/logotype'
+import UnpackingNews from '@/modules/news/UnpackingNews'
 
 
 const News: FC = ({}) => {
 	return (
 		<div className={cl.pageContainer}>
-		
 			<div className={cl.CenterContainer}>
 				<MainNews />
-				<h1 className={cl.NewsLogo}>
-					<span>Kokoc</span>Новости
-				</h1>
+				<Logotype FirstWord='Kokoc' SecondWord='Новости' />
 				<NewsFilter />
 				<div className={cl.NewsContainer}>
-					<Unpacking/>
+					<UnpackingNews />
 				</div>
 			</div>
 		</div>
