@@ -1,12 +1,15 @@
 import Image from "next/image";
-
-import { TeamPhoto } from "@/modules/teamPhoto/teamPhoto";
+import { Matches } from "@/modules/matches/matches";
+import { Container } from "@/components/container/container";
 
 
 export default function Home() {
   return (
     <>
-      <TeamPhoto />
+      <Container>
+
+        <Matches />
+      </Container>
     </>
   );
 }
