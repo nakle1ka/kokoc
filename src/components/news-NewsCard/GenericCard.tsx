@@ -16,7 +16,7 @@ type CombinedProps = NewsCardWithoutId | PlayerCardWithoutId
 
 const GenericCard: FC<CombinedProps & Props> = props => {
 	return (
-		<Link href={props.href} className={cl.NewsLink} id={props.id}>
+		<Link href={props.href} className={cl.CardLink} id={props.id}>
 			<div className={cl.Card}>
 				<Image
 					className={cl.Image}
@@ -25,10 +25,10 @@ const GenericCard: FC<CombinedProps & Props> = props => {
 					height={400}
 				/>
 
-				<div className={cl.NewsDescription}>
+				<div className={cl.CardDescription}>
 					{'Date' in props && <div className={cl.NewsDate}>{props.Date}</div>}
 
-					<div className={cl.NewsLogo}>{props.NameLogo}</div>
+					<div className={cl.NameLogo}>{props.NameLogo}</div>
 					{'NumberPlayer' in props && (
 						<div className={cl.PlayerNumber}>{`№${props.NumberPlayer}`}</div>
 					)}

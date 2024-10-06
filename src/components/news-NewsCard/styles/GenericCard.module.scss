@@ -25,7 +25,7 @@
 	object-fit: cover;
 }
 
-.NewsDescription {
+.CardDescription {
 	position: absolute;
 	bottom: 0;
 	padding: 20px;
@@ -37,7 +37,7 @@
 	color: $fontColor;
 }
 
-.NewsLogo {
+.NameLogo {
 	color: white;
 	font-size: clamp(20px, 5vw, 32px);
 	line-height: 110%;
@@ -65,7 +65,7 @@
 	transition: background 0.4s ease-out;
 	width: 100%;
 }
-.NewsLink:hover .Card:before {
+.CardLink:hover .Card:before {
 	background: linear-gradient(
 		180deg,
 		rgb(227, 48, 70, 0.2) 24%,
