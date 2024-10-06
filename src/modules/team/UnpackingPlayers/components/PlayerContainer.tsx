@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import cl from './styles/PlayerContainer.module.scss'
 import { PlayerCardType } from '@/types/NewsCardType'
-import GenericCard from '@/components/news-NewsCard/GenericCard'
+import GenericCard from '@/components/GenericCard/GenericCard'
 
 type Props = {
 	logotype: string

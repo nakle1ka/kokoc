@@ -1,0 +1,20 @@
+.SearchContainer{
+   position: relative;
+   width: 100%;
+   height: 200px;
+   margin-top: 50px;
+   
+}
+
+.Search{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.CommandItem{
+    margin-top: 5px;
+}
+
+.CommandItem, #EmptyFiled,.Input{
+    font-size: clamp(16px,4vw,20px);
+}

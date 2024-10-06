@@ -1,0 +1,27 @@
+@import '@/SCSS/mixins';
+
+.ListItem {
+	@include FlexCenter;
+	gap: 20px;
+}
+.IconContainer {
+	min-width: 50px;
+}
+.ItemNameText {
+	font-size: clamp(16px, 5vw, 18px);
+}
+
+.ItemNameContainer:after {
+	content: '';
+	opacity: 0;
+	display: block;
+	width: 0px;
+	height: 1px;
+	transition: width 250ms;
+	border: 1px solid black;
+}
+
+.ListItem:hover .ItemNameContainer::after {
+	opacity: 1;
+	width: 100px;
+}

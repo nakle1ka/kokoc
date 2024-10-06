@@ -2,7 +2,11 @@
 
 .Logo {
 	color: $darkGreen;
-	margin-bottom: 50px;
 	line-height: 90%;
 	font-size: clamp(45px, 6vw, 68px);
+	span {
+		display: block;
+		color: $mainRed;
+		margin: 0;
+	}
 }

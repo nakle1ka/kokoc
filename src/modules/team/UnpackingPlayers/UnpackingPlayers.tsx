@@ -8,7 +8,6 @@ const UnpackingPlayers: FC = ({}) => {
 	const Players = PlayersStore(state => state.Players)
 	const GroupedPlayers = Object.groupBy(Players, ({ role }) => role)
 	const roles: PlayerCardType['role'][] = [
-		
 		'Вратарь',
 		'Защитник',
 		'Нападающий',

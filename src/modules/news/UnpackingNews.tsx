@@ -1,5 +1,5 @@
 'use client'
-import GenericCard from '@/components/news-NewsCard/GenericCard'
+import GenericCard from '@/components/GenericCard/GenericCard'
 import { NewsCardStore } from '@/store/NewsStore'
 import { FC } from 'react'
 
