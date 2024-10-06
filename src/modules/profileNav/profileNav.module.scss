@@ -1,0 +1,65 @@
+@import "@/SCSS/variables";
+
+.desktopNav {
+  display: flex;
+  padding: 10px 32px;
+  gap: 2.75rem;
+
+  .link {
+    background-color: transparent;
+    color: $darkGreen;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+    border-bottom: 2px solid transparent;
+    text-wrap: nowrap;
+
+    &:hover {
+      border-bottom: 2px solid $mainGreen;
+    }
+
+    &.active {
+      border-bottom: 2px solid $mainGreen;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    gap: 0rem;
+    justify-content: space-between;
+
+    .link {
+      font-size: 16px;
+      padding: 10px 8px;
+    }
+  }
+}
+
+.mobileLink {
+  font-size: 16px;
+  padding: 10px 8px;
+  border-radius: 0;
+  color: $darkGreen;
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 576px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileNav {
+    display: block;
+  }
+}
+
+@media (min-width: 577px) {
+  .mobileNav {
+    display: none;
+  }
+}

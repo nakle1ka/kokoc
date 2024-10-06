@@ -1,0 +1,31 @@
+@import "@/SCSS/variables";
+
+.scroll {
+  overflow-x: scroll;
+}
+
+.purchaseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+
+  th,
+  td {
+    border-bottom: 1px solid $mainGreen;
+    padding: 8px 30px;
+    text-align: left;
+  }
+
+  tr > td {
+    padding: 20px 10px 20px 30px;
+  }
+
+  th {
+    background-color: $mainGreen;
+    color: $fontColor;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+}

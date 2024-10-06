@@ -1,14 +1,8 @@
-import React from 'react';
-import styles from "./styles/header.module.scss"
+import React from "react";
+import styles from "./styles/header.module.scss";
 
-type Props = {
-
-}
+type Props = {};
 
 export const Header: React.FC<Props> = ({}) => {
-    return ( 
-        <div className={styles.header} >
-
-        </div>
-    );
-}
+  return <div className={styles.header}></div>;
+};
