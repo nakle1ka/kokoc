@@ -1,0 +1,78 @@
+@import "@/SCSS/variables.scss";
+@import "@/SCSS/mixins.scss";
+
+.btn {
+
+    $transition: all .3s ease;
+
+    min-width: 175px;
+    height: 35px;
+    padding: 0 25px;
+
+    position: relative;
+    z-index: 3;
+
+    transition: $transition;
+
+    &::before {
+        @include WFull;
+        @include AbsoluteTop;
+
+        clip-path: polygon(calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%, 0 0);
+
+        content: "";
+        background-color: $mainRed;
+        z-index: 2;
+
+        transition: $transition;
+    }
+
+    &::after {
+        @include WFull;
+        @include AbsoluteTop;
+
+        clip-path: polygon(calc(100% - 15px) 0, 100% 0, 100% 15px, calc(100% - 15px / 2) calc(15px / 2));
+
+        content: "";
+        background-color: $mainRed;
+        z-index: 2;
+        transition: $transition;
+    }
+
+    &:hover {
+        .text {
+            color: black;
+        }
+
+        &::before {
+            clip-path: polygon(20px 0, 20px 20px, 20px 100%, 0 100%, 0 0);
+        }
+
+        &::after {
+            clip-path: polygon(calc(100% - 15px) 0, 100% 0, 100% 100%, calc(100% - 15px) 100%);
+        }
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+
+        position: relative;
+        z-index: 3;
+
+        transition: $transition;
+    }
+}
+
+@media (hover:hover) {
+    .btn {
+        cursor: pointer;
+    }
+}
+
+@media (hover:none) {
+    .btn {
+        cursor: default;
+    }
+}
