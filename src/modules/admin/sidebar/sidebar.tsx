@@ -9,7 +9,7 @@ type Props = {}
 
 
 const Sidebar: FC<Props> = ({}) => {
-	const [isOpen, setIsOpen] = useState(true)
+	const [isOpen, setIsOpen] = useState(false)
 	const SlidebarRef = useRef(null)
 	useClickOutside(SlidebarRef,()=>setIsOpen(false))
 	return (

@@ -1,7 +1,7 @@
 import cl from './styles/page.module.scss'
 import { FC } from 'react'
 import MainNews from '@/modules/news/MainNews/MainNews'
-import NewsFilter from '@/modules/news/NewsFilter/NewsFilter'
+import NewsFilter from '@/modules/NewsFilter/NewsFilter'
 import Logotype from '@/components/ui/logotype/logotype'
 import UnpackingNews from '@/modules/news/UnpackingNews'
 

@@ -3,7 +3,7 @@
 .Sidebar {
 	position: absolute;
 	left: 0;
-
+z-index: 10;
     max-width: 200px;
 	min-height: 100%;
 	border-right: 2px solid $mainRed;

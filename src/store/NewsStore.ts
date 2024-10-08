@@ -29,7 +29,7 @@ const NewsCardStore = create<NewsCardStoreType>(set => ({
 			href: '/team',
 		},
 		{
-			NameLogo: ' Goal hype hype very cool',
+			NameLogo: ' Goal hype hype very cool nsadn jnasfnasn isanfin asnfinasjfn asnfnaisfnin asnfj',
 			Date: '30.04.2023',
 			ImageSrc: '',
 			id: 4346,

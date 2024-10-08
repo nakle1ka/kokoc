@@ -13,9 +13,11 @@ type Props = {
 	width?: string
 	height?: string
 	onChange?: (value: string) => void
+	
 }
 
 function SelectMenu({
+	
 	placeholder,
 	items,
 	className,

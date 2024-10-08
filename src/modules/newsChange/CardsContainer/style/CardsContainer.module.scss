@@ -1,0 +1,40 @@
+@import '@/SCSS/variables';
+@import '@/SCSS/mixins';
+
+.CardsContainer {
+	display: grid;
+	grid-template-columns: 1fr;
+
+	max-width: 1000px;
+	margin: 0 auto;
+    height: 900px;
+    overflow-y: auto
+}
+.CreateNew {
+	@include FlexCenter;
+	justify-content: space-between;
+    position: sticky;
+    top:0;
+    background-color: white;
+    padding: 10px;
+    border-top: 1px solid $lightGray;
+    box-shadow: 0px -2px 5px black;
+}
+.Pagination{
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+}
+
+.CreateButton{
+    color:black;
+    background-color: white;
+    border:1px solid $mainGreen
+
+}
+.CreateButton:hover{
+    color:white;
+    background-color: $mainGreen;
+   
+
+}

@@ -1,0 +1,35 @@
+@import '@/SCSS/mixins';
+@import '@/SCSS/variables';
+.Card{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+    gap:15px;
+    width: 100%;
+    border-top: 1px solid $lightGray;
+}
+.CardDate{
+    font-weight: 600
+}
+
+.CardEdit{
+    @include FlexCenter;
+    width: 100%;
+    gap:20px
+}
+.EditIcon,.DeleteIcon{
+    cursor: pointer;
+}
+
+.EditIcon:hover, .DeleteIcon:hover{
+    transform: scale(1.1);
+}
+
+@media (min-width:320px) and (max-width:768px){
+    .Card{
+        grid-template-columns: 1fr ;
+    }
+    
+}
