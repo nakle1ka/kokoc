@@ -1,5 +1,8 @@
 @import '@/SCSS/variables';
 @import '@/SCSS/mixins';
+.Container{
+    margin-top:50px
+}
 
 .CardsContainer {
 	display: grid;
@@ -18,7 +21,7 @@
     background-color: white;
     padding: 10px;
     border-top: 1px solid $lightGray;
-    box-shadow: 0px -2px 5px black;
+    box-shadow: 0px 0px 2px black;
 }
 .Pagination{
     position: sticky;

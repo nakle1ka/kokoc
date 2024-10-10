@@ -5,6 +5,7 @@ import { NewsCardStore } from '@/store/NewsStore'
 import NewsCard from '@/components/NewsCards/NewsCards'
 import { Button } from '@/components/ui/button'
 import PagintationMenu from '@/components/ui/paginationMenu'
+import NewsFilter from '@/modules/NewsFilter/NewsFilter'
 
 type Props = {}
 
@@ -14,6 +15,7 @@ const NewsContainer: FC<Props> = ({}) => {
 	return (
 		<div className={cl.Container}>
 			<div className={cl.CardsContainer}>
+				<NewsFilter/>
 				<header className={cl.CreateNew}>
 					<Button className={cl.CreateButton}>Создать новость</Button>
 				</header>
