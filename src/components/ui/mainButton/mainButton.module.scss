@@ -9,11 +9,8 @@
     height: 35px;
     padding: 0 25px;
 
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-
     position: relative;
+    z-index: 3;
 
     transition: $transition;
 
@@ -25,7 +22,7 @@
 
         content: "";
         background-color: $mainRed;
-        z-index: -1;
+        z-index: 2;
 
         transition: $transition;
     }
@@ -38,12 +35,14 @@
 
         content: "";
         background-color: $mainRed;
-        z-index: -1;
+        z-index: 2;
         transition: $transition;
     }
 
     &:hover {
-        color: black;
+        .text {
+            color: black;
+        }
 
         &::before {
             clip-path: polygon(20px 0, 20px 20px, 20px 100%, 0 100%, 0 0);
@@ -52,6 +51,17 @@
         &::after {
             clip-path: polygon(calc(100% - 15px) 0, 100% 0, 100% 100%, calc(100% - 15px) 100%);
         }
+    }
+
+    .text {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+
+        position: relative;
+        z-index: 3;
+
+        transition: $transition;
     }
 }
 

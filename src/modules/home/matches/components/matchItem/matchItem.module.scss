@@ -1,0 +1,30 @@
+@import "@/SCSS/mixins.scss";
+
+#card {
+    margin: 10px
+}
+
+.teams {
+    @include FlexCenter;
+    gap: 10px;
+
+    .team {
+        @include FlexCenter(column);
+    }
+
+    .teamLogo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+#points {
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+
+    padding: 20px 0 0;
+
+    display: flex;
+    justify-content: center;
+}

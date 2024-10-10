@@ -1,0 +1,50 @@
+#container {
+    height: 500px;
+    display: flex;
+    gap: 10px;
+}
+
+#title {
+    width: 200px;
+}
+
+.content {
+    position: relative;
+    flex: 1 1 auto;
+}
+
+.cards {
+    padding: 25px 5px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    gap: 10px;
+
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        height: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #cacaca80;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 910px) {
+    #container {
+        flex-direction: column;
+        height: 710px;
+    }
+
+    #title {
+        width: 100%;
+    }
+}

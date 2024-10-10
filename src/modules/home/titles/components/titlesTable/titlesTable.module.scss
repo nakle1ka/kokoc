@@ -1,0 +1,16 @@
+@mixin place($color, $bgColor) {
+    color: $color;
+    background-color: $bgColor;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.place1 {
+    @include place(#eeb600, #fff83284)
+}
+.place2 {
+    @include place(#a1a1a1, #dadada )
+}
+.place3 {
+    @include place(#ffa200, #ffe1a5)
+}
