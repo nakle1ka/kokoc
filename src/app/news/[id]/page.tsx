@@ -2,15 +2,15 @@
 import BlocksContainer from '@/modules/news[id]/BlockContainer/BlocksContainer'
 import cl from './style/page.module.scss'
 import { FC } from 'react'
-import BlockHeader from '@/modules/news[id]/BlockHeader/BlockHeader'
-import NewsPageBlocksStore from '@/store/NewsPageBlocks'
+import { NewsCardStore } from '@/store/NewsStore'
+
 
 const NewsPage: FC = ({}) => {
-	const MainHeader = NewsPageBlocksStore(state => state.Block.NewsLogotype)
-	const MainImage = NewsPageBlocksStore(state => state.Block.NewsMainImage)
+	const AllDataPage = NewsCardStore()
+
 	return (
 		<div className={cl.Page}>
-			<BlockHeader NewsLogotype={MainHeader} NewsMainImage={MainImage} />
+			{/* <BlockHeader NewsLogotype={MainHeader} NewsMainImage={MainImage} /> */}
 			<BlocksContainer />
 		</div>
 	)

@@ -12,10 +12,15 @@ type Props = {
 	page: number
 	allPages: number
 	onFetchClick: (page: number) => void
-    className?:string
+	className?: string
 }
 
-const PagintationMenu: FC<Props> = ({ page, allPages, onFetchClick,className }) => {
+const PagintationMenu: FC<Props> = ({
+	page,
+	allPages,
+	onFetchClick,
+	className,
+}) => {
 	return (
 		<Pagination className={className}>
 			<PaginationContent>

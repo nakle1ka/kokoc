@@ -2,7 +2,7 @@ import { FC } from 'react'
 import cl from './style/changeNews.module.scss'
 import Logotype from '@/components/ui/logotype/logotype'
 
-import NewsContainer from '@/modules/newsChange/CardsContainer/CardsContainer'
+import NewsContainer from '@/modules/newsChange/NewsContainer/NewsContainer'
 
 const ChangeNews: FC = ({}) => {
 	return (
@@ -10,7 +10,6 @@ const ChangeNews: FC = ({}) => {
 			<div className={cl.UpperContainer}>
 				<Logotype FirstWord='Модерирование' SecondWord='Новостей' />
 			</div>
-
 			<NewsContainer />
 		</div>
 	)

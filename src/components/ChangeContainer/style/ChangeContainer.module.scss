@@ -1,14 +1,15 @@
-@import '@/SCSS/variables';
 @import '@/SCSS/mixins';
+@import '@/SCSS/variables';
 .Container{
-    margin-top:50px
+    margin-top:50px;
+    margin-bottom:20px;
 }
 
 .CardsContainer {
 	display: grid;
 	grid-template-columns: 1fr;
-
-	max-width: 1000px;
+    grid-template-rows: 0.2fr 0.1fr;
+	max-width: 1200px;
 	margin: 0 auto;
     height: 900px;
     overflow-y: auto
@@ -21,12 +22,7 @@
     background-color: white;
     padding: 10px;
     border-top: 1px solid $lightGray;
-    box-shadow: 0px 0px 2px black;
-}
-.Pagination{
-    position: sticky;
-    bottom: 0;
-    background-color: white;
+     border-bottom: 1px solid $lightGray;
 }
 
 .CreateButton{

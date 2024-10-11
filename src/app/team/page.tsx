@@ -2,7 +2,7 @@ import {FC} from 'react';
 import cl from './styles/team.module.scss'
 import Logotype from '@/components/ui/logotype/logotype';
 import UnpackingPlayers from '@/modules/team/UnpackingPlayers/UnpackingPlayers';
-import SearchPlayer from '@/modules/team/SearchPlayer/SearchPalyer';
+import SearchPlayer from '@/components/SearchPlayer/SearchPalyer';
 
 
 const TeamPage: FC = ({}) => {

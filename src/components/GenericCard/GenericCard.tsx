@@ -2,35 +2,44 @@ import { FC } from 'react'
 import cl from './styles/GenericCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { NewsCardType, PlayerCardType } from '@/types/NewsCardType'
+import { NewsCardType, PlayerCardType } from '@/types/NewsorPlayerCardType'
 import im from '@/images/Снимок экрана (300).png'
 type Props = {
 	id?: string
 	alt: string
 }
 
-type NewsCardWithoutId = Omit<NewsCardType, 'id'>
-type PlayerCardWithoutRole = Omit<PlayerCardType, 'role'>
-type PlayerCardWithoutId = Omit<PlayerCardWithoutRole, 'id'>
-type CombinedProps = NewsCardWithoutId | PlayerCardWithoutId
+type NeededNewsCardType = Pick<NewsCardType, 'title'> &
+	Pick<NewsCardType, 'published_at'> &
+	Pick<NewsCardType, 'news_id'>
+
+type NeededPlayerCardType = Pick<PlayerCardType, 'FullName'> &
+	Pick<PlayerCardType, 'player_id'> &
+	Pick<PlayerCardType, 'NumberInClub'>
+
+type CombinedProps = NeededNewsCardType | NeededPlayerCardType
 
 const GenericCard: FC<CombinedProps & Props> = props => {
 	return (
-		<Link href={props.href} className={cl.CardLink} id={props.id}>
+		<Link
+			href={`${'player_id' in props ? props.player_id : props.news_id}`}
+			className={cl.CardLink}
+			id={props.id}
+		>
 			<div className={cl.Card}>
-				<Image
-					className={cl.Image}
-					src={im}
-					alt={props.alt}
-					height={400}
-				/>
+				<Image className={cl.Image} src={im} alt={props.alt} height={400} />
 
 				<div className={cl.CardDescription}>
-					{'Date' in props && <div className={cl.NewsDate}>{props.Date}</div>}
+					{'published_at' in props && (
+						<div className={cl.NewsDate}>{props.published_at}</div>
+					)}
 
-					<div className={cl.NameLogo}>{props.NameLogo}</div>
-					{'NumberPlayer' in props && (
-						<div className={cl.PlayerNumber}>{`№${props.NumberPlayer}`}</div>
+					<div className={cl.NameLogo}>
+						{'title' in props ? props.title : props.FullName}
+					</div>
+
+					{'NumberInClub' in props && (
+						<div className={cl.PlayerNumber}>{`№${props.NumberInClub}`}</div>
 					)}
 				</div>
 			</div>

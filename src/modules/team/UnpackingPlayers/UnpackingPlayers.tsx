@@ -1,8 +1,8 @@
 'use client'
-import { PlayersStore } from '@/store/PlayersStore'
+import { PlayersStore } from '@/store/PlayersCardsStore'
 import { FC } from 'react'
 import PlayerContainer from './components/PlayerContainer'
-import { PlayerCardType } from '@/types/NewsCardType'
+import { PlayerCardType } from '@/types/NewsorPlayerCardType'
 
 const UnpackingPlayers: FC = ({}) => {
 	const Players = PlayersStore(state => state.Players)

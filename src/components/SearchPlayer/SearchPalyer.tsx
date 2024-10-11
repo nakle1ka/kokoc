@@ -9,16 +9,18 @@ import {
 	CommandGroup,
 	CommandItem,
 } from '@/components/ui/command'
-import { PlayersStore } from '@/store/PlayersStore'
+import { PlayersStore } from '@/store/PlayersCardsStore'
 import Link from 'next/link'
 
-type Props = {}
+type Props = {
+	id?:string
+}
 
-const SearchPlayer: FC<Props> = ({}) => {
+const SearchPlayer: FC<Props> = ({id}) => {
 	const Players = PlayersStore(state => state.Players)
 	const [value, setValue] = useState('')
 	return (
-		<div className={cl.SearchContainer}>
+		<div className={cl.SearchContainer} id={id}>
 			<Command className={cl.Search}>
 				<CommandInput
 					className={cl.Input}
@@ -34,9 +36,12 @@ const SearchPlayer: FC<Props> = ({}) => {
 							</CommandEmpty>
 							<CommandGroup heading='Игроки'>
 								{Players.map(item => (
-									<Link href={item.href}>
-										<CommandItem className={cl.CommandItem} key={item.id}>
-											{item.NameLogo}
+									<Link href={item.player_id}>
+										<CommandItem
+											className={cl.CommandItem}
+											key={item.player_id}
+										>
+											{item.FullName}
 										</CommandItem>
 									</Link>
 								))}

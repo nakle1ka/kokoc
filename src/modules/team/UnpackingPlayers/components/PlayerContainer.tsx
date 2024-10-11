@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cl from './styles/PlayerContainer.module.scss'
-import { PlayerCardType } from '@/types/NewsCardType'
+import { PlayerCardType } from '@/types/NewsorPlayerCardType'
 import GenericCard from '@/components/GenericCard/GenericCard'
 
 type Props = {
@@ -17,11 +17,10 @@ const PlayerContainer: FC<Props> = ({ logotype, PlayersCards }) => {
 					<div className={cl.Players}>
 						{PlayersCards.map(card => (
 							<GenericCard
-								key={card.id}
-								href={card.href}
-								ImageSrc={card.ImageSrc}
-								NumberPlayer={card.NumberPlayer}
-								NameLogo={card.NameLogo}
+								key={card.player_id}
+								player_id={card.player_id}
+								NumberInClub={card.NumberInClub}
+								FullName={card.FullName}
                                 alt='Фото игрока'
 							/>
 						))}

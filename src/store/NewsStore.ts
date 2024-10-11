@@ -1,69 +1,79 @@
-import { NewsCardType } from '@/types/NewsCardType'
+import { NewsCardType } from '@/types/NewsorPlayerCardType'
 import { create } from 'zustand'
-
+import axios from 'axios';
 type NewsCardStoreType = {
-	Cards: NewsCardType[]
+	NewsCards: NewsCardType[]
+	GetNewsCards: () => Promise<void>
 }
 
 const NewsCardStore = create<NewsCardStoreType>(set => ({
-	Cards: [
+	NewsCards: [
 		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 4568,
-			href: '/team',
+			news_id: '3fa85f64-5717-4562-b3fc-2c963f66a5fa6',
+			title: 'afss saf asf string',
+			content: 'string',
+			category: 'masfm psfkpaskfpo',
+			published_at: '2024-10-11T16:11:14.524Z',
+			author: 'Петровисян Анатольевевевич',
+			media: [],
+			reactions: [],
+			comments: [],
+			tags: [],
 		},
 		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 423,
-			href: '/team',
+			news_id: '3f3a85f64-5717-4562-b3fc-2c963f66afa6',
+			title: 'Тимофей Якутович забил свой самый первый гоооол',
+			content: 'string',
+			category: 'string',
+			published_at: '2024-10-11T16:11:14.524Z',
+			author: 'string',
+			media: [],
+			reactions: [],
+			comments: [],
+			tags: [],
 		},
+		
 		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 4967,
-			href: '/team',
+			news_id: '3fa85f6415-5717-4562-b3fc-2c963f66afa6',
+			title: 'afss saf asf string',
+			content: 'string',
+			category: 'string',
+			published_at: '2024-10-11T16:11:14.524Z',
+			author: 'string',
+			media: [],
+			reactions: [],
+			comments: [],
+			tags: [],
 		},
+		
 		{
-			NameLogo: ' Goal hype hype very cool nsadn jnasfnasn isanfin asnfinasjfn asnfnaisfnin asnfj',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 4346,
-			href: '/team',
+			news_id: '3fa85f364-5717-4562-b3fc-2c963f66afa6',
+			title: 'afss saf asf string',
+			content: 'string',
+			category: 'string',
+			published_at: '2024-10-11T16:11:14.524Z',
+			author: 'string',
+			media: [],
+			reactions: [],
+			comments: [],
+			tags: [],
 		},
+		
 		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 4567,
-			href: '/team',
-		},
-		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 40,
-			href: '/team',
-		},
-
-		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 471,
-			href: '/team',
-		},
-		{
-			NameLogo: ' Goal hype hype very cool',
-			Date: '30.04.2023',
-			ImageSrc: '',
-			id: 43461,
-			href: '/team',
+			news_id: '3fa852f64-5717-4562-b3fc-2c963f66afa6',
+			title: 'afss saf asf string',
+			content: 'string',
+			category: 'string',
+			published_at: '2024-10-11T16:11:14.524Z',
+			author: 'string',
+			media: [],
+			reactions: [],
+			comments: [],
+			tags: [],
 		},
 	],
+	GetNewsCards: async () => {
+		const data = await axios.get('https://34.0.251.246/news/?limit=20&offset=0')
+	},
 }))
-export {NewsCardStore}
+export { NewsCardStore }
