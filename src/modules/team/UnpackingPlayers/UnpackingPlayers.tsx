@@ -2,7 +2,7 @@
 import { PlayersStore } from '@/store/PlayersCardsStore'
 import { FC } from 'react'
 import PlayerContainer from './components/PlayerContainer'
-import { PlayerCardType } from '@/types/NewsorPlayerCardType'
+import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
 
 const UnpackingPlayers: FC = ({}) => {
 	const Players = PlayersStore(state => state.Players)

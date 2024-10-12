@@ -1,11 +1,10 @@
 'use client'
 import PlayerStatistic from '@/components/InfoBefore/PlayerStatistic'
+import PlayerBiography from '@/components/PlayerBiography/PlayerBiography'
 import { PlayersStore } from '@/store/PlayersCardsStore'
 import { FC } from 'react'
-import RedactContainer from '../RedactContainer/RedactContainer'
-import PlayerBiography from '@/components/PlayerBiography/PlayerBiography'
 
-const PlayerRequestStatistic: FC = ({}) => {
+const GetPlayerStatistic: FC = ({}) => {
 	const { Players } = PlayersStore()
 	return (
 		<>
@@ -20,10 +19,9 @@ const PlayerRequestStatistic: FC = ({}) => {
 				Goals={Players[0].Goals}
 				MatchesPlayed={Players[0].MatchesPlayed}
 			/>
-			<PlayerBiography Biography={Players[0].Biography}/>
-			<RedactContainer />
+			<PlayerBiography Biography={Players[0].Biography} />
 		</>
 	)
 }
 
-export default PlayerRequestStatistic
+export default GetPlayerStatistic

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cl from './styles/PlayerContainer.module.scss'
-import { PlayerCardType } from '@/types/NewsorPlayerCardType'
+import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
 import GenericCard from '@/components/GenericCard/GenericCard'
 
 type Props = {

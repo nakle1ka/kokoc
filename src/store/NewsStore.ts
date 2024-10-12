@@ -1,4 +1,4 @@
-import { NewsCardType } from '@/types/NewsorPlayerCardType'
+import { NewsCardType } from '@/types/NewsOrPlayerCardType'
 import { create } from 'zustand'
 import axios from 'axios';
 type NewsCardStoreType = {

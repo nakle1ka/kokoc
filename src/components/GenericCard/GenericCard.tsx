@@ -2,7 +2,7 @@ import { FC } from 'react'
 import cl from './styles/GenericCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
-import { NewsCardType, PlayerCardType } from '@/types/NewsorPlayerCardType'
+import { NewsCardType, PlayerCardType } from '@/types/NewsOrPlayerCardType'
 import im from '@/images/Снимок экрана (300).png'
 type Props = {
 	id?: string

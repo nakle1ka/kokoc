@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import cl from './style/NewsCard.module.scss'
-import { NewsCardType, PlayerCardType } from '@/types/NewsorPlayerCardType'
+import { NewsCardType, PlayerCardType } from '@/types/NewsOrPlayerCardType'
 import Link from 'next/link'
 import { Edit, Trash } from 'lucide-react'
 type NeededNewsCardType = Pick<NewsCardType, 'news_id'> &
