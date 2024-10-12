@@ -1,0 +1,10 @@
+#btn {
+    height: 50px;
+    span {
+        font-size: 25px;
+    }
+
+    &:hover > span {
+        color: white;
+    }
+}
