@@ -1,8 +1,0 @@
-@import '@/SCSS/mixins';
-.BlocksContainer {
-    @include FlexCenter($fd:column);
-    gap:30px;
-    padding: 50px 0px;
-	max-width: 1100px;
-	margin: 0 auto;
-}

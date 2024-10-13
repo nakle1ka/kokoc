@@ -14,10 +14,18 @@ type NeededPlayerCardType = Pick<PlayerCardType, 'player_id'> &
 	Pick<PlayerCardType, 'NumberInClub'> &
 	Pick<PlayerCardType, 'role'> &
 	Pick<PlayerCardType, 'DateOfBirth'>
-const NewsOrPlayerAdminCard: FC<NeededNewsCardType | NeededPlayerCardType> = props => {
+const NewsOrPlayerAdminCard: FC<
+	NeededNewsCardType | NeededPlayerCardType
+> = props => {
 	return (
 		<div className={cl.Card}>
-			<Link href={'news_id' in props ? props.news_id : props.player_id}>
+			<Link
+				href={
+					'news_id' in props
+						? `/news/${props.news_id}`
+						: `/team/${props.player_id}`
+				}
+			>
 				<div>
 					<p className={cl.CardName}>
 						{'title' in props ? (
@@ -62,7 +70,15 @@ const NewsOrPlayerAdminCard: FC<NeededNewsCardType | NeededPlayerCardType> = pro
 				)}
 			</div>
 			<div className={cl.CardEdit}>
-				<Edit color='rgb(52, 141, 139)' className={cl.EditIcon} />
+				<Link
+					href={
+						'news_id' in props
+							? `/admin/changeNews/redact/${props.news_id}`
+							: `/admin/changeTeam/redact/${props.player_id}`
+					}
+				>
+					<Edit color='rgb(52, 141, 139)' className={cl.EditIcon} />
+				</Link>
 				<Trash color='#e33046' className={cl.DeleteIcon} />
 			</div>
 		</div>

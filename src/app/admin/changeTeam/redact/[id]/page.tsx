@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import cl from './style/page.module.scss'
-import PlayerRequestStatistic from '@/modules/RedactPlayer/PlayerRequestStatistic/PlayerRequestStatistic';
+import PlayerRequestStatistic from '@/modules/changeTeam/RedactPlayer/PlayerRequestStatistic/PlayerRequestStatistic';
 
 
 const RedactPlayer: FC = ({}) => {

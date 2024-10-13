@@ -5,7 +5,7 @@ import Logotype from '@/components/ui/logotype/logotype'
 import { Button } from '@/components/ui/button'
 import InputField from '@/components/useFormInputField/useFormInputfield'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { BiographyOptions, FieldArray } from './helpers/FieldArray'
+import { BiographyOptions, FieldArray } from '../../helpers/FieldArray'
 import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
 import TextareaField from '@/components/ui/TextareaUseForm/TextareaUseForm'
 import { registerOptions } from '@/types/useFormType'
@@ -21,10 +21,11 @@ const RedactContainer: FC = ({}) => {
 	const onRedact: SubmitHandler<PlayerCardWithoutId> = data => {
 		console.log(data)
 	}
-	const onInput = (e: ChangeEvent<HTMLInputElement>) => {
+	const onInput = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		setGlobalInputValue(prev => ({ ...prev, [e.target.name]: e.target.value }))
 		console.log(globalInputValue)
 	}
+
 	return (
 		<div>
 			<Logotype FirstWord='Секция' SecondWord='Редактирования' />
@@ -43,15 +44,13 @@ const RedactContainer: FC = ({}) => {
 						}}
 					/>
 				))}
-
-				<TextareaField
-					register={register}
+				<TextareaField register={register}
 					id={cl.Textarea}
 					registerOptions={
 						BiographyOptions as unknown as registerOptions<PlayerCardWithoutId>
 					}
-					eventOptions={{ value: globalInputValue.Biography, onInput: onInput }}
-				/>
+					eventOptions={{ value: globalInputValue.Biography, onInput: onInput}}/>
+				
 				<div className={cl.SubmitContainer}>
 					<Button>Сохранить</Button>
 				</div>

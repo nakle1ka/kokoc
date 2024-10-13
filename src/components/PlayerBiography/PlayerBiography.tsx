@@ -2,22 +2,14 @@ import { FC } from 'react'
 import cl from './style/PlayerBiography.module.scss'
 import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
 import Logotype from '../ui/logotype/logotype'
+import splitIntoParagraphs from '@/utils/splitIntoParagraphs'
 
 type Props = {
 	Biography: PlayerCardType['Biography']
 }
 
 const PlayerBiography: FC<Props> = ({ Biography }) => {
-	const splitIntoParagraphs = (text: string) => {
-		const sentences = text.split(/(?<=[.!?])\s+/)
-		const paragraphs = []
-
-		for (let i = 0; i < sentences.length; i += 3) {
-			paragraphs.push(sentences.slice(i, i + 3).join(' '))
-		}
-
-		return paragraphs
-	}
+	
 
 	const paragraphs = splitIntoParagraphs(Biography)
 	return (

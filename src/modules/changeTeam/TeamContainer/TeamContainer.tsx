@@ -4,10 +4,9 @@ import ChangeContainer from '@/components/ChangeContainer/ChangeContainer'
 import { PlayersStore } from '@/store/PlayersCardsStore'
 import NewsOrPlayerAdminCard from '@/components/NewsCards/NewsOrPlayerAdminCards'
 
-import cl from './style/TeamContainer.module.scss'
-type Props = {}
 
-const TeamContainer: FC<Props> = ({}) => {
+
+const TeamContainer: FC = ({}) => {
     const [page,setPage] = useState(1)
 	const { Players } = PlayersStore()
 	return (

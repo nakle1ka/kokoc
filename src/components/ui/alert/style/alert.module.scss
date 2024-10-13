@@ -1,0 +1,15 @@
+@import '@/SCSS/mixins';
+@import '@/SCSS/variables';
+
+.Alert{
+    @include FlexCenter;
+    top: -50px;
+    border: 1px solid $mainRed;
+    right: 0;
+    left: 0;
+    position: absolute;
+    height: 40px;
+    border-radius: 10px;
+    font-size: clamp(18px,5vw,20px);
+    color:$mainRed
+}

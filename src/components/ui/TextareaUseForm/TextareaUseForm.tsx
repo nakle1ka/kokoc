@@ -10,8 +10,9 @@ type props<T extends object> = {
 	watchLabel?: (arg: string) => string
 	register: UseFormRegister<T>
 	id?: string
+	placeholder?:string
 	eventOptions?:{
-		onInput:(e:ChangeEvent<HTMLInputElement>)=>void
+		onInput:(e:ChangeEvent<HTMLTextAreaElement>)=>void
 		value:string
 	}
 }
@@ -22,12 +23,14 @@ function TextareaField<T extends object>({
 	inputError,
 	watchLabel,
 	id,
-	eventOptions
+	eventOptions,
+	placeholder
 }: props<T>) {
 	return (
 		<Textarea
+		placeholder={placeholder}
 			value={eventOptions?.value}
-			onInput={()=> eventOptions?.onInput }
+			onInput={eventOptions?.onInput }
 			id={id}
 			{...register(registerOptions.inputName, {
 				required: registerOptions.required,
