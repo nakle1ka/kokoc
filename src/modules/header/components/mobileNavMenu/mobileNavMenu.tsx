@@ -24,7 +24,8 @@ export const MobileNavMenu: React.FC<Props> = ({ }) => {
                 <SheetTrigger className="bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 rounded-md">
                     Меню
                 </SheetTrigger>
-                <SheetContent>
+
+                <SheetContent id={styles.content}>
                     <SheetHeader>
                         <SheetTitle id={styles.title}>Навигация</SheetTitle>
                         <SheetDescription>
