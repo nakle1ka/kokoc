@@ -12,13 +12,13 @@ const MainNews: FC<Props> = ({}) => {
 				<Image src={im} alt='Главная Новость' className={cl.MainNewsImage} />
 			</div>
 			<div className={cl.MainNewsTextBlock}>
-				<Link href={'d'} className={cl.MainNewsLogo}>
+				<Link href={'/'} className={cl.MainNewsLogo}>
 					Борис Ротенберг поздравил женскую молодёжку с чемпионством
 				</Link>
 				<div className={cl.MainNewsDescription}>
 					Заместитель генерального директора по развитию молодёжного футбола ФК
-					«Локомотив» Борис Борисович Ротенберг поздравил женскую молодежную
-					команду «Локо» с чемпионством в Молодёжной лиге – 2024 и...
+					 Борис Борисович Ротенберг поздравил женскую молодежную
+					команду  с чемпионством в Молодёжной лиге – 2024 и...
 				</div>
 			</div>
 		</div>

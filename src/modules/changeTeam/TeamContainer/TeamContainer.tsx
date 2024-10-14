@@ -10,7 +10,7 @@ const TeamContainer: FC = ({}) => {
     const [page,setPage] = useState(1)
 	const { Players } = PlayersStore()
 	return (
-		<ChangeContainer CreateNewText='Добавить игрока'>
+		<ChangeContainer CreateNewText='Добавить игрока' href='/admin/changeTeam/create'>
 			{Players.map(item => (
 				<NewsOrPlayerAdminCard
 					player_id={item.player_id}

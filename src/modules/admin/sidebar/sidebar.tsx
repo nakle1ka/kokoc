@@ -15,7 +15,6 @@ const Sidebar: FC<Props> = ({}) => {
 	return (
 		<>
 			<MainButton id={isOpen ? cl.closingButton : cl.OpenButton} text='Меню' onClick={() => setIsOpen(true)} />
-			
 				<div className={cl.Sidebar} ref={SlidebarRef} id={isOpen ? '' : cl.Close}>
 					<h2 className={cl.SidebarLogo}>Меню</h2>
 					<div className={cl.ItemsContainer}>

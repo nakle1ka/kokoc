@@ -9,8 +9,8 @@ const ListItems: ListItemType[] = [
 	},
 	{
 		icon: <Check />,
-		href: '/admin/changeShop',
-		ItemName: 'Управление магазином',
+		href: '/admin/changeTeam',
+		ItemName: 'Управление командой',
 	},
 ]
 export default ListItems

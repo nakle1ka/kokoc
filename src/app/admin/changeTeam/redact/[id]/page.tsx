@@ -7,7 +7,6 @@ const RedactPlayer: FC = ({}) => {
     return ( 
         <div className={cl.Page}>
             <PlayerRequestStatistic/>
-            
         </div>
     );
 }

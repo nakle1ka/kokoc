@@ -8,12 +8,20 @@ import { registerOptions } from '@/types/useFormType'
 import TextareaField from '@/components/ui/TextareaUseForm/TextareaUseForm'
 import { Button } from '@/components/ui/button'
 import Alert from '@/components/ui/alert/alert'
+import axios from 'axios'
 
 type Props = {}
 
 const CreateContainer: FC<Props> = ({}) => {
 	const { register, handleSubmit, watch, formState } = useForm<NeededNewsType>()
-	const onSubmit = (data: NeededNewsType) => {}
+	const onSubmit = (data: NeededNewsType) => {
+		const meta =  axios.post('http://34.0.251.246/news/', {
+			...data,
+			
+		})
+		
+		console.log(meta)
+	}
 	const errors =
 		formState.errors.category?.message ||
 		formState.errors.title?.message ||
@@ -24,6 +32,7 @@ const CreateContainer: FC<Props> = ({}) => {
 
 			{FieldArray.map((item, i) => (
 				<InputField
+					key={i}
 					register={register}
 					watchLabel={watch}
 					registerOptions={item as unknown as registerOptions<NeededNewsType>}

@@ -3,9 +3,9 @@ import { FC, useState } from 'react'
 import cl from './style/CardsContainer.module.scss'
 import { NewsCardStore } from '@/store/NewsStore'
 import NewsOrPlayerAdminCard from '@/components/NewsCards/NewsOrPlayerAdminCards'
-import { Button } from '@/components/ui/button'
+
 import PagintationMenu from '@/components/ui/paginationMenu'
-import NewsFilter from '@/modules/NewsFilter/NewsFilter'
+
 import ChangeContainer from '@/components/ChangeContainer/ChangeContainer'
 
 type Props = {}
@@ -16,10 +16,11 @@ const NewsContainer: FC<Props> = ({}) => {
 
 	return (
 		<ChangeContainer
-			FilterCards={<NewsFilter />}
 			CreateNewText='Создать новость'
+			href='/admin/changeNews/create'
 		>
 			{NewsCards.length == 0 && <p>Еще нет новостей</p>}
+
 			{NewsCards && (
 				<>
 					{NewsCards.map(item => (

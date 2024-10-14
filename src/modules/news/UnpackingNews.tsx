@@ -2,15 +2,15 @@
 import GenericCard from '@/components/GenericCard/GenericCard'
 import { NewsCardStore } from '@/store/NewsStore'
 import { FC, useEffect } from 'react'
-
+import cl from './UnpackingNews.module.scss'
 const UnpackingNews: FC = ({}) => {
 	const { NewsCards, GetNewsCards } = NewsCardStore()
-	useEffect(() => {
-		GetNewsCards()
-	}, [])
+	// useEffect(() => {
+	// 	GetNewsCards()
+	// }, [])
 
 	return (
-		<>
+		<div className={cl.NewsContainer}>
 			{NewsCards.map(item => (
 				<GenericCard
 					key={item.news_id}
@@ -20,7 +20,7 @@ const UnpackingNews: FC = ({}) => {
 					alt='Картинка новости'
 				/>
 			))}
-		</>
+		</div>
 	)
 }
 
