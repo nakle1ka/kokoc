@@ -1,0 +1,24 @@
+@import "@/SCSS/mixins.scss";
+@import "@/SCSS/variables.scss";
+
+.loader {
+    @include FlexCenter;
+
+    display: absolute;
+    @include WFull;
+
+    
+    .spinner {
+        color: $mainRed;
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

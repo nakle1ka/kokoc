@@ -1,18 +1,4 @@
-type TMatchItem = {
-    date: string;
-    name: string;
-} & TTeam1 & TTeam2
-
-type TTeam1 = {
-    t1logo: string;
-    t1name: string;
-    t1points: number;
-}
-type TTeam2 = {
-    t2logo: string;
-    t2name: string;
-    t2points: number;
-}
+import { TMatchItem, TTeam1, TTeam2 } from "../types";
 
 function getStat(
     kokocNumber: number, kokocPoints: number,
@@ -38,7 +24,7 @@ function getStat(
     }
 }
 
-export const matchList: TMatchItem[] = [
+export const matchListTest: TMatchItem[] = [
     {
         date: "28.09.2024 (сб)",
         name: "15 тур",

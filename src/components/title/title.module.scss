@@ -25,9 +25,11 @@
     height: 100%;
 
     .text {
-        //  translateX чтобы текст не выходил за блок
-        transform: rotate(-90deg) translateX(-100px);
-        line-height: 35px;
+        // для одной линии с карточками
+        padding-top: 25px;
+        
+        writing-mode: vertical-rl;
+        line-height: 55px;
 
 
         .kokoc {
@@ -47,10 +49,12 @@
 @media (max-width: 910px) {
     .rotatedContainer {
         flex-direction: row;
+        gap: 25px;
         height: 150px;
 
         .text {
-            transform: rotate(0) translateX(0);
+            writing-mode: horizontal-tb;
+            line-height: 40px;
         }
     }
 }

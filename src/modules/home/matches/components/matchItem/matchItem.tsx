@@ -11,10 +11,12 @@ import {
 import { MainButton } from '@/components/ui/mainButton/mainButton';
 
 import styles from './matchItem.module.scss'
+import { MatchButton } from '../matchButton/matchButton';
 
 type Props = {
     date: string;
     name: string;
+    href: number;
 
     team1Logo: string;
     team1Name: string;
@@ -26,7 +28,7 @@ type Props = {
 }
 
 export const MatchItem: React.FC<Props> = ({
-    date, name,
+    date, name, href,
     team1Logo, team1Name, team1Points,
     team2Logo, team2Name, team2Points
 }) => {
@@ -84,7 +86,7 @@ export const MatchItem: React.FC<Props> = ({
             </CardContent>
 
             <CardFooter className='flex justify-center'>
-                <MainButton text='Матч-центр' onClick={() => { }} />
+                <MatchButton href={href} />
             </CardFooter>
 
         </Card>

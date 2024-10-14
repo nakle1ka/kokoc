@@ -18,12 +18,11 @@ export const NewCard: React.FC<Props> = ({ image, title, desc = "", href }) => {
     const router = useRouter()
     return (
         <div className={styles.container} onClick={() => router.push(href)} >
-            <Image
+            <img
                 src={image}
                 alt='news logo'
-                width={1920}
-                height={1080}
                 className={styles.image}
+                loading='lazy'
             />
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.desc}>
