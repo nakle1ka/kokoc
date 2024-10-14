@@ -1,0 +1,31 @@
+@import '@/SCSS/variables';
+@import '@/SCSS/mixins';
+.Players{
+   display: grid;
+   grid-template-columns: (repeat(4,1fr));
+   gap:30px
+}
+
+
+
+.GroupName{
+    margin-bottom: 20px;
+    color:$mainRed;
+    font-size: clamp(25px,5vw,45px);
+}
+
+.PlayerContainer{
+    margin-bottom: 50px;
+}
+
+@media(max-width:500px){
+    .Players{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width:500px) and (max-width:1200px) {
+    .Players{
+        grid-template-columns: 1fr 1fr;
+    }
+}

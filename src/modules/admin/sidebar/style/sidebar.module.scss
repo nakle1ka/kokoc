@@ -1,0 +1,46 @@
+@import '@/SCSS/variables';
+@import '@/SCSS/mixins';
+.Sidebar {
+	position: absolute;
+	left: 0;
+z-index: 10;
+    max-width: 200px;
+	min-height: 100%;
+	border-right: 2px solid $mainRed;
+    padding:20px ;
+
+    overflow: hidden;
+    transition: 300ms;
+    backdrop-filter: blur(20px);
+}
+#Close{
+    transform: translateX(-75vw);
+}
+
+
+.SidebarLogo{
+    font-size: clamp(25px,4vw,30px);
+    border-bottom: 1px solid $mainRed;
+    margin-bottom: 5px;
+}
+
+.ItemsContainer{
+    @include FlexCenter($fd:column);
+    gap:30px;
+    padding: 20px 0px;
+
+}
+#OpenButton{
+    position: absolute;
+    right: 0;
+    min-width: auto;
+    
+    
+}
+#closingButton{
+    min-width: auto;
+    position: absolute;
+    transition: 200ms;
+    visibility: hidden;
+    opacity: 0;
+}

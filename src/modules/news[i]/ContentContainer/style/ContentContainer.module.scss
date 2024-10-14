@@ -1,0 +1,23 @@
+@import '@/SCSS/variables';
+
+.ContentContainer{
+    max-width: 1250px;
+    padding: 0px 10px;
+    margin: 100px auto;
+}
+#Logotype{
+    margin-bottom: 30px;
+}
+
+.Paragraph{
+    margin-top: 20px;
+}
+.ReturnToNews{
+    display: flex;
+    gap:15px;
+    font-weight: 600;
+    transition: 250ms;
+}
+.ReturnLink:hover .ReturnToNews{
+    color: $mainRed;
+}

@@ -1,0 +1,41 @@
+@import '@/SCSS/variables';
+
+
+.pageContainer {
+	min-height: 100vh;
+	padding-bottom: 25px;
+	background-image: linear-gradient(119deg,white 80%,rgb(227, 48, 70) 80%);
+	span {
+		display: block;
+		color: $mainRed;
+		margin: 0;
+	}
+}
+
+.headerContainer{
+	padding: 0px 25px;
+}
+.CenterContainer {
+	max-width: 1350px;
+	margin: 0 auto;
+}
+
+.TeamContainer{
+    padding: 20px 40px;
+}
+
+@media (max-width: 768px) {
+	.NewsContainer {
+		grid-template-columns: 1fr;
+	}
+    .FiltersContianer{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(min-width:768px) and (max-width:1100px){
+    .NewsContainer {
+		grid-template-columns: 1fr 1fr;
+	}
+
+}

@@ -1,0 +1,5 @@
+@import '@/SCSS/variables';
+.FilterName{
+    font-size: clamp(20px,5vw,30px);
+    color:$mainRed;
+}
