@@ -1,9 +1,8 @@
 "use client";
+import MatchesHistory from "@/modules/matchesHistory/components/matchesHistory/MatchesHistory";
 
-import { MatchesHistory } from "@/modules/matchesHistory";
-
-const ProfilePage: React.FC = () => {
+const MathHistoryPage: React.FC = () => {
   return <MatchesHistory />;
 };
 
-export default ProfilePage;
+export default MathHistoryPage;

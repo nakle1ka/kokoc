@@ -1,9 +1,10 @@
 @import "@/SCSS/variables";
 
-.purchaseTable {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  text-wrap: nowrap;
 
   th,
   td {
@@ -23,5 +24,15 @@
 
   tr:hover {
     background-color: #ddd;
+  }
+
+  .emptyMessage {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .scroll {
+    overflow-x: scroll;
   }
 }

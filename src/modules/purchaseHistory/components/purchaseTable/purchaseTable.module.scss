@@ -1,13 +1,10 @@
 @import "@/SCSS/variables";
 
-.scroll {
-  overflow-x: scroll;
-}
-
-.purchaseTable {
+.table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  text-wrap: nowrap;
 
   th,
   td {
@@ -18,6 +15,31 @@
 
   tr > td {
     padding: 20px 10px 20px 30px;
+    text-align: start;
+  }
+
+  .status {
+    border-radius: 6px;
+    padding: 3px;
+
+    &.pending {
+      background-color: $pendingBg;
+      color: $pendingFontColor;
+    }
+
+    &.cancelled {
+      background-color: $cancelledBg;
+      color: $cancelledFontColor;
+    }
+
+    &.completed {
+      background-color: $completedBg;
+      color: $completedFontColor;
+    }
+
+    &.inCart {
+      background-color: $inCart;
+    }
   }
 
   th {
@@ -26,6 +48,33 @@
   }
 
   tr:hover {
-    background-color: #ddd;
+    background-color: #deffde;
+  }
+
+  .payBtn {
+    border: 1px solid $mainGreen;
+    border-radius: 8px;
+    padding: 3px;
+
+    &:hover {
+      background: $mainGreen;
+      color: $fontColor;
+    }
+  }
+  .cancelBtn {
+    border: 1px solid $mainRed;
+    border-radius: 8px;
+    padding: 3px;
+    margin-left: 6px;
+
+    &:hover {
+      background: $mainRed;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .scroll {
+    overflow-x: scroll;
   }
 }

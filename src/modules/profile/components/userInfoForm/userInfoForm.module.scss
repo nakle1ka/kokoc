@@ -21,6 +21,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    outline: 1px;
   }
 
   .editIcon {
@@ -54,35 +55,6 @@
 
 .inputContainer:nth-last-child(3) {
   margin-bottom: 2rem;
-}
-
-.submit {
-  width: 130px;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  background: #348d8b;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #329d9c;
-  }
-}
-
-.textarea {
-  border: 2px solid $mainGreen;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 16px;
-  width: 100%;
-  min-height: 100px;
-  resize: none;
-
-  &:focus {
-    outline: none;
-  }
 }
 
 .error {

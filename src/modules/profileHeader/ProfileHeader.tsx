@@ -1,14 +1,29 @@
 import React from "react";
-import styles from "./profileHeader.module.scss";
 import { useStore } from "@/store/useStore";
+import { useShopStore } from "@/store/useShopStore";
+
+import styles from "./profileHeader.module.scss";
 
 const ProfileHeader: React.FC = () => {
-  const { username, subscriptions, totalPurchases, totalMatches } = useStore();
+  const { username, subscriptions, totalMatches } = useStore();
+  const { transactions, getTransactionsData } = useShopStore();
+
+  // const getProfileHeaderData = useStore((state) => state.getProfileHeaderData);
+
+  // useEffect(() => {
+  //   getProfileHeaderData();
+  //   if (transactions.length === 0) {
+  //     getTransactionsData();
+  //   }
+  // }, [username]);
 
   return (
     <div className={styles.introuduceContainer}>
       <div className={styles.userInfoStatsContainer}>
-        <p className={styles.userName}>{username}</p>
+        <div>
+          <p className={styles.userName}>{username}</p>
+        </div>
+
         <ul className={styles.statsInfoContainer}>
           <li className={styles.statsInfoBlock}>
             <p className={styles.title}>Подписок</p>
@@ -16,7 +31,7 @@ const ProfileHeader: React.FC = () => {
           </li>
           <li className={styles.statsInfoBlock}>
             <p className={styles.title}>Транзакций</p>
-            <p className={styles.stats}>{totalPurchases}</p>
+            <p className={styles.stats}>{transactions.length}</p>
           </li>
           <li className={styles.statsInfoBlock}>
             <p className={styles.title}>Посещенных матчей</p>

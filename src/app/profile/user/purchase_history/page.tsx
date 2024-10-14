@@ -1,9 +1,9 @@
 "use client";
 
-import { PurchaseHistory } from "@/modules/purchaseHistory";
+import PurchaseHistory from "@/modules/purchaseHistory/components/purchaseHistory/PurchaseHistory";
 
-const ProfilePage: React.FC = () => {
+const PurchaseHistoryPage: React.FC = () => {
   return <PurchaseHistory />;
 };
 
-export default ProfilePage;
+export default PurchaseHistoryPage;

@@ -1,9 +1,9 @@
 "use client";
 
-import { Subscriptions } from "@/modules/subscriptions";
+import Subscriptions from "@/modules/subscriptions/components/subscriptions/Subscriptions";
 
-const ProfilePage: React.FC = () => {
+const SubscriptionsPage: React.FC = () => {
   return <Subscriptions />;
 };
 
-export default ProfilePage;
+export default SubscriptionsPage;

@@ -1,17 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./pagination.module.scss";
-import { Button } from "@/components/ui/button";
+import { MainButton } from "@/components/ui/mainButton/mainButton";
 
 interface Props {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+  itemsCount?: number;
 }
 
 const Pagination: React.FC<Props> = ({
   currentPage,
   totalPages,
   onPageChange,
+  itemsCount,
 }) => {
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -25,17 +27,31 @@ const Pagination: React.FC<Props> = ({
     }
   };
 
+  useEffect(() => {
+    if (itemsCount === 0) {
+      onPageChange(1);
+    }
+  }, [itemsCount, onPageChange]);
+
+  if (totalPages === 0) {
+    return null;
+  }
+
   return (
     <div className={styles.pagination}>
-      <Button onClick={handlePreviousPage} disabled={currentPage === 1}>
-        Назад
-      </Button>
+      <MainButton
+        text="Назад"
+        onClick={handlePreviousPage}
+        disabled={currentPage === 1}
+      />
       <span>
         Страница {currentPage} из {totalPages}
       </span>
-      <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
-        Вперёд
-      </Button>
+      <MainButton
+        text="Вперёд"
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+      />
     </div>
   );
 };

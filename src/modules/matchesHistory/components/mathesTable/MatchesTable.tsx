@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Pagination from "../../../pagination/Pagination";
+
 import styles from "./matchesTable.module.scss";
 
 interface Match {
@@ -26,8 +27,8 @@ const MatchesTable: React.FC<Props> = ({ matches }) => {
   const totalPages = Math.ceil(matches.length / itemsPerPage);
 
   return (
-    <div>
-      <table className={styles.purchaseTable}>
+    <div className={styles.scroll}>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>Название</th>

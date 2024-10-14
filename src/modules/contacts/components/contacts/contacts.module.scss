@@ -1,0 +1,42 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 30px clamp(0px, 5vw, 30px);
+
+  h1 {
+    font-size: 38px;
+    padding-left: 25px;
+  }
+}
+
+.fluid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.cardList {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feedback {
+  top: 80px;
+  position: sticky;
+  flex: 1 0 auto;
+}
+
+@media (max-width: 992px) {
+  .fluid {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: normal;
+  }
+}

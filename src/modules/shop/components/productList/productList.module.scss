@@ -1,0 +1,14 @@
+.productList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.loaderContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 400px;
+}

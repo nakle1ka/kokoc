@@ -1,0 +1,62 @@
+@import "@/SCSS/variables.scss";
+
+.panelContainer {
+  .panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: height 300ms;
+    margin-bottom: 40px;
+
+    &.panelOpen {
+      height: 60px;
+      visibility: visible;
+
+      @media (max-width: 768px) {
+        height: 120px;
+      }
+    }
+
+    &.panelClosed {
+      height: 0;
+      visibility: hidden;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+
+      h3 {
+        font-size: 22px;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: start;
+      }
+    }
+  }
+
+  .burger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background: $mainRed;
+
+    .burgerIcon {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+    }
+
+    &.panelOpen {
+      border: 2px solid #505050;
+    }
+  }
+}

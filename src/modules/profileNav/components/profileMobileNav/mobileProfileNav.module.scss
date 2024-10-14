@@ -1,0 +1,38 @@
+@import "@/SCSS/variables";
+
+.mobileNav {
+  font-size: 20px;
+  padding: 30px 20px;
+  border-radius: 0;
+  border: 0;
+  color: $fontColor;
+  background-color: $mainGreen;
+}
+
+.menu {
+  border-radius: 0;
+}
+
+.mobileLink {
+  font-size: 16px;
+  padding: 10px 8px;
+  border-radius: 0;
+  color: $darkGreen;
+
+  &.active {
+    font-weight: bold;
+    color: $fontColor;
+    background-color: $mainGreen;
+  }
+}
+
+.selectValue {
+  font-size: 40px;
+  color: $fontColor;
+}
+
+@media (min-width: 768px) {
+  .mobileNav {
+    display: none;
+  }
+}

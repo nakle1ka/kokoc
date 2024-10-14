@@ -1,5 +1,6 @@
 import React from "react";
-import { Checkbox } from "@/components/ui/checkbox";
+
+import styles from "./subscriptionItem.module.scss";
 
 interface SubscriptionCheckboxProps {
   label: string;
@@ -13,14 +14,19 @@ const SubscriptionCheckbox: React.FC<SubscriptionCheckboxProps> = ({
   onChange,
 }) => {
   return (
-    <div className="flex items-center space-x-2">
-      <Checkbox id="terms" />
-      <label
-        htmlFor="terms"
-        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-      >
-        Accept terms and conditions
-      </label>
+    <div className={styles.subscription}>
+      <label className={styles.subscriptionText}>{label}</label>
+      <div className={styles.checkboxWrapper}>
+        <label className={styles.switch}>
+          <input
+            className={styles.checkbox}
+            type="checkbox"
+            onChange={(e) => onChange(e.target.checked)}
+            checked={isChecked}
+          />
+          <span className={styles.slider}></span>
+        </label>
+      </div>
     </div>
   );
 };

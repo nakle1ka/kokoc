@@ -1,0 +1,94 @@
+@import "@/SCSS/variables.scss";
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 68px;
+  font-style: bold;
+  margin-bottom: 1rem;
+}
+
+.form {
+  box-shadow: 0 0 20px 0 rgba(170, 170, 170, 0.744);
+  margin: 2rem 1rem;
+  padding: clamp(10px, 4vw, 20px) clamp(15px, 5vw, 35px) clamp(20px, 6vw, 30px)
+    clamp(15px, 5vw, 35px);
+
+  header {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    letter-spacing: 3px;
+    gap: 2rem;
+    text-wrap: nowrap;
+
+    a {
+      border-bottom: 2px solid $mainRed;
+      font-weight: bold;
+      color: $mainRed;
+    }
+
+    a:hover {
+      color: $mainRed;
+      transition: color 400ms;
+    }
+  }
+
+  .inputContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+
+    input {
+      background-color: transparent;
+      font-size: clamp(1px, 4vw, 1.5rem);
+    }
+
+    input[type="password"] {
+      font-family: Verdana;
+      letter-spacing: 0.125em;
+    }
+
+    label {
+      font-size: 16px;
+    }
+
+    .error {
+      color: $mainRed;
+      font-size: 14px;
+      font-weight: bold;
+    }
+  }
+
+  .privacyPolicy {
+    margin: 2.25rem 0;
+    font-size: 14px;
+  }
+
+  .submitContainer {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .title {
+    display: none;
+  }
+
+  .form {
+    header {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}

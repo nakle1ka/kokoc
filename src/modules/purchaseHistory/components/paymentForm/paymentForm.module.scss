@@ -1,0 +1,64 @@
+@import "@/SCSS/variables";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid $darkGray;
+  border-radius: 8px;
+  background-color: $darkGreen;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: $fontColor;
+    text-align: center;
+  }
+
+  p {
+    color: $fontColor;
+
+    &.price {
+      margin-bottom: 5px;
+    }
+    &.size {
+      margin-bottom: 10px;
+    }
+  }
+
+  .error {
+    color: $mainRed;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .success {
+    color: $mainGreen;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: $mainGreen;
+    color: $fontColor;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken($mainGreen, 10%);
+    }
+
+    &:disabled {
+      background-color: lighten($darkGray, 20%);
+      cursor: not-allowed;
+    }
+  }
+}
