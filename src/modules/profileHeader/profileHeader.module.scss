@@ -1,0 +1,110 @@
+@import "@/SCSS/variables";
+
+.introuduceContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 60px 30px 20px 30px;
+  background: url("../../../public/assets/header-image.png") center center
+    no-repeat;
+  background-size: cover;
+
+  .userInfoStatsContainer {
+    height: 100%;
+    width: 100%;
+  }
+
+  .userName {
+    font-size: 56px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: $fontColor;
+  }
+  .skeletonUserName {
+    height: 50px;
+    width: 150px;
+    margin-bottom: 2rem;
+  }
+
+  .statsInfoContainer {
+    display: flex;
+  }
+
+  .statsInfoBlock {
+    text-transform: uppercase;
+    border: 1px solid $mainGreen;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    margin-bottom: 2rem;
+    text-wrap: nowrap;
+
+    .title {
+      font-size: 18px;
+      font-weight: 500;
+      color: $fontColor;
+    }
+    .stats {
+      font-size: 38px;
+      color: $mainRed;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .statsInfoBlock {
+      padding: 20px 20px;
+      font-size: clamp(16px, 1vw, 6px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .statsInfoBlock {
+      padding: 20px 20px;
+      flex-direction: row;
+      min-height: auto;
+      justify-content: space-between;
+      margin-bottom: clamp(1rem, 2vw, 2rem);
+      font-size: clamp(16px, 5vw, 18px);
+
+      p {
+        line-height: 16px;
+      }
+
+      .stats {
+        color: $fontColor;
+      }
+    }
+
+    .statsInfoContainer {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .statsInfoBlock {
+    padding: 20px 20px;
+    font-size: clamp(16px, 1vw, 6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .statsInfoBlock {
+    padding: 20px 20px;
+    flex-direction: row;
+    min-height: auto;
+    justify-content: space-between;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(16px, 5vw, 18px);
+
+    p {
+      line-height: 16px;
+    }
+  }
+
+  .statsInfoContainer {
+    display: block;
+  }
+}

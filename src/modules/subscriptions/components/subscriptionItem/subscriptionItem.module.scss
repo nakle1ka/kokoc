@@ -1,0 +1,64 @@
+@import "@/SCSS/variables";
+
+.subscription {
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+
+  .subscriptionText {
+    font-size: clamp(16px, 4vw, 28px);
+    text-wrap: nowrap;
+  }
+}
+
+.checkboxWrapper {
+  input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #adb5bd;
+    transition: 0.4s;
+    border-radius: 30px;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.27em;
+    bottom: 0.25em;
+    background-color: #adb5bd;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: $mainRed;
+    border: 1px solid $mainRed;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(1.4em);
+    background-color: #fff;
+  }
+}

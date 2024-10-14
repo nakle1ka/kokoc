@@ -1,0 +1,12 @@
+@import "@/SCSS/variables.scss";
+
+.input {
+  font-size: 24px;
+  margin-bottom: 4px;
+  padding: 4px;
+  border-bottom: 2px solid $mainGreen;
+
+  &:focus {
+    outline: none;
+  }
+}

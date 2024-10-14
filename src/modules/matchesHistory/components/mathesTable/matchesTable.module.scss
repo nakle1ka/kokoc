@@ -1,0 +1,38 @@
+@import "@/SCSS/variables";
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-wrap: nowrap;
+
+  th,
+  td {
+    border-bottom: 1px solid $mainGreen;
+    padding: 8px 30px;
+    text-align: left;
+  }
+
+  tr > td {
+    padding: 20px 10px 20px 30px;
+  }
+
+  th {
+    background-color: $mainGreen;
+    color: $fontColor;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  .emptyMessage {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .scroll {
+    overflow-x: scroll;
+  }
+}

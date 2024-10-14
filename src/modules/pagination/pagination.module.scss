@@ -1,0 +1,12 @@
+@import "@/SCSS/variables";
+
+.pagination {
+  display: flex;
+  margin-top: 20px;
+
+  span {
+    align-self: center;
+    font-size: 16px;
+    margin: 0 10px;
+  }
+}

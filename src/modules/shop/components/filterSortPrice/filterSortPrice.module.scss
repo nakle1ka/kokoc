@@ -1,0 +1,17 @@
+@import "@/SCSS/variables.scss";
+
+.filterContainer {
+  display: flex;
+  width: 160px;
+
+  *:focus-within {
+    box-shadow: none;
+  }
+}
+
+.select {
+  padding: 4px;
+  padding-left: 10px;
+  border-radius: 6px;
+  border: 2px solid $mainGreen;
+}
