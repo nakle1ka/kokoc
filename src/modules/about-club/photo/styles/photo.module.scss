@@ -1,0 +1,72 @@
+@import "@/SCSS/mixins.scss";
+@import "@/SCSS/variables.scss";
+
+.content {
+    position: relative;
+
+    width: min(1440px, 80%);
+    aspect-ratio: 4 / 3;
+    margin: auto;
+    overflow: hidden;
+
+    .photo {
+        @include AbsoluteFull;
+        filter: blur(2px) brightness(.5);
+    }
+
+    .mobileBG {
+        @include AbsoluteFull;
+        display: none;
+        background: rgb(227, 48, 70);
+        background: linear-gradient(45deg, rgba(227, 48, 70, 1) 24%, rgba(126, 0, 16, 1) 100%);
+    }
+}
+
+.text {
+    @include AbsoluteCenter;
+    text-align: center;
+    line-height: 40px;
+
+    .title {
+        font-size: clamp(40px, 6vw, 70px);
+        color: white;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .desc {
+        font-size: clamp(15px, 2vw, 25px);
+        // color: $opacityFont;
+        color: white;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 700px) {
+    #container {
+        padding: 0 0 30px;
+    }
+
+    .content {
+        @include WFull;
+        height: 200px;
+
+        .photo {
+            display: none;
+        }
+
+        .mobileBG {
+            display: block;
+        }
+
+        .title {
+            color: white;
+        }
+
+        .desc {
+            color: rgba(255, 255, 255, 0.461);
+        }
+    }
+
+}
