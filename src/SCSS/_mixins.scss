@@ -29,3 +29,21 @@
     right: 0;
     bottom: 0;
 }
+
+@mixin CustomScroll($color: #cacaca80, $axis: row) {
+    &::-webkit-scrollbar {
+        background-color: transparent;
+        
+        @if $axis == row {
+            height: 5px;
+        }
+        @else {
+            width: 8px;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color;
+        border-radius: 20px;
+    }
+}

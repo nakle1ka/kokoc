@@ -5,7 +5,7 @@ import styles from "./mainButton.module.scss";
 
 type Props = {
   text: string;
-  onClick: () => void;
+  onClick: (() => void) | undefined;
   id?: string;
   disabled?: boolean;
 };

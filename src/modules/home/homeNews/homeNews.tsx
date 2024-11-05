@@ -12,16 +12,12 @@ import { Loader } from '@/components/loader/loader';
 import styles from './styles/homeNews.module.scss'
 
 type TRes = {
-    "news_id": string
-    "title": string
-    "content": string
-    "category": string
-    "published_at": string
-    "author": string
-    "media": any[]
-    "reactions": any[]
-    "comments": any[]
-    "tags": any[] // не успеваем :(
+    "id": string;
+    "title": string;
+    "description": string;
+    "category": string;
+    "date": string;
+    "media": string;
 }
 
 type Props = {
@@ -40,8 +36,7 @@ export const HomeNews: React.FC<Props> = ({ }) => {
             try {
                 setIsLoading(true)
 
-                const res: TRes[] = (await axios.get("https://34.0.251.246/news?limit=10&offset=1")).data
-                console.log(res)
+                const res: TRes[] = (await axios.get("/api/getNews")).data
 
                 setNewsList(res)
             } catch (err) {
@@ -71,25 +66,13 @@ export const HomeNews: React.FC<Props> = ({ }) => {
                     {!isLoading && newsList.length !== 0 &&
                         newsList.map(n =>
                             <NewCard
-                                image={n.media[0]}
+                                image={n.media}
                                 title={n.title}
-                                desc={n.content}
-                                href={"/news/" + n.news_id}
+                                desc={n.description}
+                                href={"/news/" + n.id}
                             />
                         )
                     }
-
-                    {!isLoading && newsList.length == 0 &&
-                        <>
-                            <NewCard
-                                image='/assets/comand.jpg'
-                                title='Новостей ещё нет'
-                                desc='но вы можете их добавить через админ панель'
-                                href='/news/test'
-                            />
-                        </>
-                    }
-
                 </div>
             </div>
 

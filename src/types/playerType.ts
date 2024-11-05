@@ -1,5 +1,3 @@
-// под необязательными пунктами отмечена информация, не найденая на сайте.
-// позднее сами её заполните ;)
 export type TPlayer = {
     role?:
       | 'Нападающий'
@@ -9,7 +7,7 @@ export type TPlayer = {
       | 'Ушли'
       | 'Тренер';
     NumberInClub?:number;
-    player_id?: string;
+    player_id: string;
     FullName: string;
     Weight?: number;
     Height?: number;

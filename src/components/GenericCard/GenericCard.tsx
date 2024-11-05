@@ -1,11 +1,14 @@
-import { FC } from 'react'
-import cl from './styles/GenericCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { FC } from 'react'
 import { NewsCardType, PlayerCardType } from '@/types/NewsOrPlayerCardType'
-import im from '@/images/Снимок экрана (300).png'
+
+import cl from './styles/GenericCard.module.scss'
+
 type Props = {
 	id?: string
+	photo: string;
 	alt: string
 }
 
@@ -14,20 +17,19 @@ type NeededNewsCardType = Pick<NewsCardType, 'title'> &
 	Pick<NewsCardType, 'news_id'>
 
 type NeededPlayerCardType = Pick<PlayerCardType, 'FullName'> &
-	Pick<PlayerCardType, 'player_id'> &
-	Pick<PlayerCardType, 'NumberInClub'>
+	Pick<PlayerCardType, 'player_id'>
 
 type CombinedProps = NeededNewsCardType | NeededPlayerCardType
 
 const GenericCard: FC<CombinedProps & Props> = props => {
 	return (
 		<Link
-			href={`${'player_id' in props ? props.player_id : props.news_id}`}
+			href={'player_id' in props ? `/team/${props.player_id}` : `/news/${props.news_id}`}
 			className={cl.CardLink}
 			id={props.id}
 		>
 			<div className={cl.Card}>
-				<Image className={cl.Image} src={im} alt={props.alt} height={400} />
+				<img className={cl.Image} src={props.photo} alt={props.alt} loading='lazy' />
 
 				<div className={cl.CardDescription}>
 					{'published_at' in props && (

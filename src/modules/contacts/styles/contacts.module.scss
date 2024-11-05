@@ -1,0 +1,16 @@
+.fluid {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 25px 0;
+  gap: 10px;
+}
+
+@media (max-width: 992px) {
+  .fluid {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: normal;
+  }
+}

@@ -1,6 +1,7 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -9,7 +10,7 @@ import { Container } from '@/components/container/container';
 import { responsive } from './helpers/responsive';
 import { CompoundItem } from './components/compoundItem/compoundItem';
 
-import { compoundList } from './helpers/compoundList';
+import { TPlayer } from "@/types/playerType";
 
 import styles from './styles/compound.module.scss';
 import "./styles/customCarouselDots.css";
@@ -19,6 +20,17 @@ type Props = {
 }
 
 export const Compound: React.FC<Props> = ({}) => {
+    const [compoundList, setCompoundList] = useState([] as TPlayer[])
+
+    useEffect(() => {
+        async function getPlayers() {
+            const res = (await axios.get('/api/getPlayers')).data
+            setCompoundList(res)
+        } 
+
+        getPlayers()
+    }, [])
+
     return ( 
         <Container id={styles.container}>
             <h3 className={styles.title}>Игроки клуба</h3>

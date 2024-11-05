@@ -18,14 +18,20 @@
     margin-bottom: 50px;
 }
 
-@media(max-width:500px){
+@media (max-width:500px){
     .Players{
         grid-template-columns: 1fr;
     }
 }
 
-@media(min-width:500px) and (max-width:1200px) {
+@media (min-width: 500px) and (max-width:800px) {
     .Players{
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 800px) and (max-width:1200px) {
+    .Players{
+        grid-template-columns: 1fr 1fr 1fr;
     }
 }

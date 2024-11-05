@@ -1,16 +1,18 @@
+import { FC } from 'react'
 import ContentContainer from '@/modules/news[i]/ContentContainer/ContentContainer'
 import cl from './style/page.module.scss'
-import { FC } from 'react'
 
+type Props = {
+	params: {
+		id: string;
+	}
+}
 
-
-
-const NewsPage: FC = ({}) => {
-	
+const NewsPage: FC<Props> = async ({ params }) => {
 
 	return (
 		<div className={cl.Page}>
-			<ContentContainer/>
+			<ContentContainer id={params.id} />
 		</div>
 	)
 }

@@ -1,32 +1,26 @@
 'use client'
-import {  FC, PropsWithChildren, useState } from 'react'
+
+import { FC, PropsWithChildren } from 'react'
+import { CustomSelect } from '@/components/ui/customSelect/customSelect'
+import { filtersDate } from '@/modules/NewsFilter/helpers/newsFilters'
+
 import cl from './styles/NewsFilter.module.scss'
-import FilterField from '@/components/FilterField/FilterField'
-import { filtersDate, filtersGroup } from '@/store/newsFilters'
 
 type Props = {
-	id?:string;
+	id?: string;
+	value: string;
+	onChange: (val: string) => void
 }
 
-const NewsFilter: FC<PropsWithChildren<Props>> = ({id,children}) => {
-	const [dateFilters, setDateFilters] = useState('')
-	const [groupFilter, setGroupFilters] = useState('')
-	
+const NewsFilter: FC<Props> = ({ id, onChange, value }) => {
 	return (
 		<form className={cl.FiltersContianer} id={id}>
-			<FilterField
-				setValFunc={val => setDateFilters(val)}
-				placeholder='Все'
-				Filters={filtersDate}
-				FilterName='По дате'
+			<CustomSelect
+				value={value}
+				onChange={onChange}
+				trigger='По дате'
+				items={filtersDate}
 			/>
-			<FilterField
-				setValFunc={val => setGroupFilters(val)}
-				placeholder='Все'
-				Filters={filtersGroup}
-				FilterName='По группе'
-			/>
-			{children}
 		</form>
 	)
 }

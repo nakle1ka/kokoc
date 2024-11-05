@@ -1,14 +1,17 @@
 import { FC } from 'react'
-import cl from './styles/PlayerContainer.module.scss'
-import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
+
 import GenericCard from '@/components/GenericCard/GenericCard'
 
+import { TPlayer } from '@/types/playerType'
+
+import cl from './styles/PlayerContainer.module.scss'
+
 type Props = {
-	logotype: string
-	PlayersCards: PlayerCardType[] | undefined
+	logotype?: string
+	PlayersCards: TPlayer[] | undefined
 }
 
-const PlayerContainer: FC<Props> = ({ logotype, PlayersCards }) => {
+const PlayerContainer: FC<Props> = ({ logotype = "", PlayersCards }) => {
 	return (
 		<>
 			{PlayersCards && (
@@ -19,8 +22,8 @@ const PlayerContainer: FC<Props> = ({ logotype, PlayersCards }) => {
 							<GenericCard
 								key={card.player_id}
 								player_id={card.player_id}
-								NumberInClub={card.NumberInClub}
 								FullName={card.FullName}
+								photo={card.Photo}
                                 alt='Фото игрока'
 							/>
 						))}

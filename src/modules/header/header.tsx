@@ -32,7 +32,7 @@ export const Header: React.FC<Props> = ({}) => {
 
       <div className={styles.rightSide}>
         <Button asChild>
-          <Link href={"/profile"}>
+          <Link href={"/profile/user"}>
             <User />
           </Link>
         </Button>

@@ -1,23 +1,45 @@
-@import '@/SCSS/variables';
+@import '@/SCSS/variables.scss';
 
 .ContentContainer{
     max-width: 1250px;
     padding: 0px 10px;
-    margin: 100px auto;
+    margin: 10px auto;
 }
+
 #Logotype{
     margin-bottom: 30px;
+    font-size: clamp(40px, 4.5vw, 60px);
+    line-height: 100%;
 }
 
 .Paragraph{
-    margin-top: 20px;
+    margin: 20px 0;
+    font-size: 25px;
 }
+
 .ReturnToNews{
     display: flex;
     gap:15px;
     font-weight: 600;
     transition: 250ms;
+    margin-bottom: 20px;
 }
+
 .ReturnLink:hover .ReturnToNews{
     color: $mainRed;
+}
+
+.media {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.info {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(0, 0, 0, 0.5);
 }

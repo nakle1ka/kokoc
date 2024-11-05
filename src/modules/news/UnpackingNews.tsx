@@ -1,23 +1,25 @@
 'use client'
 import GenericCard from '@/components/GenericCard/GenericCard'
-import { NewsCardStore } from '@/store/NewsStore'
-import { FC, useEffect } from 'react'
-import cl from './UnpackingNews.module.scss'
-const UnpackingNews: FC = ({}) => {
-	const { NewsCards, GetNewsCards } = NewsCardStore()
-	// useEffect(() => {
-	// 	GetNewsCards()
-	// }, [])
 
+import { FC } from 'react'
+import { Tnews } from '@/types/newsType'
+
+import cl from './UnpackingNews.module.scss'
+
+type Props = {
+	NewsCards: Tnews[]
+}
+
+const UnpackingNews: FC<Props> = ({ NewsCards }) => {
 	return (
 		<div className={cl.NewsContainer}>
 			{NewsCards.map(item => (
 				<GenericCard
-					key={item.news_id}
-					published_at={item.published_at.slice(0, 10)}
+					news_id={item.id}
 					title={item.title}
-					news_id={item.news_id}
-					alt='Картинка новости'
+					published_at={item.date}
+					photo={item.media}
+					alt='новости'
 				/>
 			))}
 		</div>

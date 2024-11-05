@@ -2,86 +2,55 @@
 
 $border-radius: 4px;
 
-.feedbackContainer {
+.feedbackForm {
+  // width: min(400px, 100%);
   display: flex;
-  width: 100%;
-  padding: 0 clamp(25px, 5vw, 60px) 0px 25px;
+  flex: 1 0 400px;
+  flex-direction: column;
 
-  .feedbackForm {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: $border-radius;
+  padding: 20px;
 
-    .feedbackTitle {
-      font-size: 24px;
-      margin-bottom: 1rem;
-    }
+  border: 1px solid #ccc;
+  border-radius: $border-radius;
 
-    .field {
-      margin-bottom: 20px;
+  .feedbackTitle {
+    font-size: 24px;
+    margin-bottom: 1rem;
+  }
 
-      label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: bold;
-      }
+  .field {
+    margin-bottom: 20px;
 
-      input,
-      textarea,
-      select {
-        width: 100%;
-        padding: 10px;
-        border: 2px solid $mainGreen;
-        border-radius: $border-radius;
-        font-size: clamp(14px, 2vw, 18px);
-        background: transparent;
-      }
-
-      @media (max-width: 576px) {
-        input,
-        textarea,
-        select {
-          border: 0;
-          border-radius: 0;
-          border-bottom: 2px solid $mainGreen;
-        }
-        textarea {
-          min-height: 0;
-          padding: 10px;
-        }
-      }
-    }
-
-    @media (max-width: 576px) {
-      .feedbackTitle {
-        font-size: 28px;
-        text-align: center;
-        margin-bottom: 2rem;
-      }
-    }
-
-    .error {
-      color: $mainRed;
-      font-size: 14px;
+    label {
+      display: block;
+      margin-bottom: 8px;
       font-weight: bold;
     }
+  }
 
-    button {
-      font-size: clamp(18px, 2vw, 20px);
+  @media (max-width: 576px) {
+    .feedbackTitle {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 2rem;
     }
   }
 
-  @media (max-width: 768px) {
-    .feedbackForm {
-      flex-basis: 100%;
-      padding: 0;
-      border: 0;
-    }
+  .error {
+    color: $mainRed;
+    font-size: 14px;
+    font-weight: bold;
   }
 }
+
+@media (max-width: 768px) {
+  .feedbackForm {
+    flex-basis: 100%;
+    padding: 0;
+    border: 0;
+  }
+}
+
 
 @media (max-width: 992px) {
   .feedbackContainer {
