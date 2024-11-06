@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Pagination from "../../../pagination/Pagination";
+import Pagination from "../../../shared/pagination/Pagination";
 
 import styles from "./matchesTable.module.scss";
 

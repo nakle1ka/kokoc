@@ -8,23 +8,11 @@ import {
     TableRow,
 } from "@/components/ui/table"
 
-import {MatchTableItem} from "./../matchTableItem/matchTableItem"
-
-type TMatchItemProps = {
-    date: string;
-    t1Logo: string;
-    t1Name: string;
-    t1Points: number;
-
-    t2Logo: string;
-    t2Name: string;
-    t2Points: number;
-
-    name: string;
-}
+import { MatchTableItem } from "./../matchTableItem/matchTableItem"
+import { TMatch } from '@/types/matchType';
 
 type Props = {
-    data: TMatchItemProps[];
+    data: TMatch[];
 }
 
 export const MatchTable: React.FC<Props> = ({ data }) => {
@@ -42,15 +30,8 @@ export const MatchTable: React.FC<Props> = ({ data }) => {
             <TableBody>
 
                 {data.map(m => (
-                    <MatchTableItem 
-                        date={m.date}
-                        name={m.name}
-                        t1Logo={m.t1Logo}
-                        t1Name={m.t1Name}
-                        t1Points={m.t1Points}
-                        t2Logo={m.t2Logo}
-                        t2Name={m.t2Name}
-                        t2Points={m.t2Points}
+                    <MatchTableItem
+                        matchData={m}
                     />
                 ))}
             </TableBody>

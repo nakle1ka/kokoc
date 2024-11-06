@@ -57,6 +57,7 @@ export const HomeNews: React.FC<Props> = ({ }) => {
                 isHaveButton={true}
                 buttonText='Все новости'
                 rotatedId={styles.title}
+                btnOnClick={() => router.push('/news')}
             />
 
             <div className={styles.content}>

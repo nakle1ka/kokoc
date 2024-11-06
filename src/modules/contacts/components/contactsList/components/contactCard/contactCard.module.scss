@@ -1,13 +1,9 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  flex: 1 0 100%;
-  max-height: 260px;
-  padding: 20px clamp(25px, 5vw, 60px) 60px 25px;
-  margin: 0 clamp(0px, 5vw, 30px) 40px clamp(0px, 5vw, 30px);
-  box-shadow: 0 26px 58px 0 rgba(122, 122, 122, 0.22),
-    0 5px 14px 0 rgba(100, 100, 100, 0.18);
-  text-wrap: nowrap;
+  padding: 25px;
+  margin: 20px 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
 
   &:last-child {
     margin-bottom: 0;
@@ -15,6 +11,7 @@
 
   .title {
     font-size: clamp(20px, 5vw, 28px);
+    font-weight: 500;
     margin-bottom: 10px;
   }
 

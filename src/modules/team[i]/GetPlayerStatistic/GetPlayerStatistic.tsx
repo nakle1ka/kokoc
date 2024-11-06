@@ -1,25 +1,22 @@
-'use client'
+import axios from 'axios';
+
 import PlayerStatistic from '@/components/InfoBefore/PlayerStatistic'
 import PlayerBiography from '@/components/PlayerBiography/PlayerBiography'
-import { PlayersStore } from '@/store/PlayersCardsStore'
-import { FC } from 'react'
 
-const GetPlayerStatistic: FC = ({}) => {
-	const { Players } = PlayersStore()
+import { FC } from 'react'
+import { TPlayer } from '@/types/playerType';
+
+type Props = {
+	id: string;
+}
+
+const GetPlayerStatistic: FC<Props> = async ({ id }) => {
+	const player: TPlayer = (await axios.get(`http://localhost:3000/api/getPlayers?id=${id}`)).data
+
 	return (
 		<>
-			<PlayerStatistic
-				role={Players[0].role}
-				NumberInClub={Players[0].NumberInClub}
-				FullName={Players[0].FullName}
-				Weight={Players[0].Weight}
-				Height={Players[0].Height}
-				DateOfBirth={Players[0].DateOfBirth}
-				Biography={Players[0].Biography}
-				Goals={Players[0].Goals}
-				MatchesPlayed={Players[0].MatchesPlayed}
-			/>
-			<PlayerBiography Biography={Players[0].Biography} />
+			<PlayerStatistic playerData={player} />
+			<PlayerBiography Biography={player.Biography} />
 		</>
 	)
 }

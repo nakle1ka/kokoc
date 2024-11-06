@@ -18,7 +18,7 @@ const MainNews: FC<Props> = ({ newsData }) => {
 				<img src={newsData.media} alt='Главная Новость' className={cl.MainNewsImage} loading='lazy' />
 			</div>
 			<div className={cl.MainNewsTextBlock}>
-				<Link href={'/'} className={cl.MainNewsLogo}>
+				<Link href={`/news/${newsData.id}`} className={cl.MainNewsLogo}>
 					{newsData.title}
 				</Link>
 				<div className={cl.MainNewsDescription}>

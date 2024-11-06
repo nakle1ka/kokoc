@@ -1,49 +1,53 @@
 @import '@/SCSS/variables';
 @import '@/SCSS/mixins';
 
-.Container{
+.Container {
     width: 100%;
     border: 1px solid $mainRed;
-    padding: 50px;
+    padding: 50px 100px;
 
     display: grid;
     grid-template-columns: 0.7fr 2fr
 }
-.RoleAndNumber{
+
+.RoleAndNumber {
     @include FlexCenter;
     margin-top: 25px;
     justify-content: space-between;
-    font-size: clamp(20px,5vw,32px);
-    
+    font-size: clamp(20px, 5vw, 32px);
+
 }
-.Stats{
+
+.Stats {
     margin-top: 20px;
-   display: grid;
-   grid-template-columns: 1fr 1fr 2fr;
-   column-gap: 10px;
-   justify-content: center;
-   justify-items: center;
-   font-size: clamp(18px,5vw,24px);
-   text-wrap: nowrap;
-}
-.Stats p:nth-child(-n + 3){
-    font-size: clamp(16px,5vw,18px);
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    column-gap: 10px;
+    justify-content: center;
+    justify-items: center;
+    font-size: clamp(18px, 5vw, 24px);
+    text-wrap: nowrap;
 }
 
-.LeftContainer{
+.Stats p:nth-child(-n + 3) {
+    font-size: clamp(16px, 5vw, 18px);
+}
+
+.LeftContainer {
     justify-self: start;
 }
-.PlayerMain{
-    width: max(60%,320px);
+
+.PlayerMain {
     justify-self: end;
     position: relative;
 }
-.PlayerImage{
+
+.PlayerImage {
     object-fit: cover;
     height: 100%;
 }
-.PlayStatistic{
+
+.PlayStatistic {
     @include FlexCenter;
     justify-content: space-around;
     position: absolute;
@@ -53,36 +57,44 @@
     right: 0;
     border: 1px solid $mainRed;
 }
-.LogoDecor{
+
+.LogoDecor {
     width: 30px;
     height: 30px;
 }
-.PlayStatistic div span{
-   display: block;
-   text-align: center;
-   width: 100%;
-   font-weight: 600;
+
+.PlayStatistic div span {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
 }
 
 
 
 
 @media (max-width:900px) {
-       
-    
-    .Container{
+
+    #fullName {
+        display: flex;
+        gap: 10px;
+    }
+
+    .Container {
         padding: 0px 25px;
         grid-template-columns: 1fr;
         height: 1000px;
         align-items: center;
     }
-    .PlayerMain{
+
+    .PlayerMain {
         margin-top: 50px;
         height: 100%;
         justify-self: center;
         align-self: end;
     }
-    .PlayStatistic{
+
+    .PlayStatistic {
         bottom: -50px;
     }
 }

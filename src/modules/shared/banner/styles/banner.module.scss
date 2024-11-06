@@ -2,18 +2,51 @@
 
 $secondColor: rgba(255, 255, 255, 0.5);
 
-#container {
+.container {
     width: 100%;
     height: 600px;
-    padding: 0;
 
-    background-image: url("/assets/banner.png");
+    padding: 0;
+    margin: 20px 0;
+
     background-position: center;
     background-repeat: no-repeat;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+
+    .bgContainer {
+        @include AbsoluteCenter;
+        z-index: -1;
+
+        height: 100%;
+        width: 100%;
+
+        .bg {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .bgitem {
+
+        .bg {
+            opacity: .05;
+        }
+
+        &::after {
+            @include AbsoluteCenter;
+            content: '';
+            display: block;
+            background-color: #003432;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+    }
 
     .content {
         width: 100%;
@@ -24,6 +57,8 @@ $secondColor: rgba(255, 255, 255, 0.5);
         gap: 10px;
 
         color: white;
+
+        position: relative;
     }
 }
 
@@ -34,7 +69,7 @@ $secondColor: rgba(255, 255, 255, 0.5);
         font-size: 45px;
         font-weight: 600;
     }
-    
+
     .time {
         font-size: 20px;
         font-weight: 500;
@@ -72,11 +107,11 @@ $secondColor: rgba(255, 255, 255, 0.5);
 
 @media (max-width: 600px) {
 
-    .info > .date {
+    .info>.date {
         font-size: 30px;
     }
 
-    .teams > .team {
+    .teams>.team {
 
         .teamLogo {
             width: 130px;

@@ -9,16 +9,15 @@ export type TTeam2 = {
     t2points: number;
 }
 
-export type TMatchItem = {
-    id?: number;
+export type TMatch = {
+    id: string;
+    time: string;
     date: string;
-    location?: string;
+    city?: string;
     name: string;
 } & TTeam1 & TTeam2
 
-
-
 export type TServerResponse = {
-    matches: TMatchItem[];
+    matches: TMatch[];
     total: number;
 }

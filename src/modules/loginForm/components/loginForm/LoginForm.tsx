@@ -8,7 +8,7 @@ import { useState } from "react";
 import router from "next/router";
 import { useForm } from "react-hook-form";
 import { useStore } from "@/store/useStore";
-import Input from "@/modules/input/Input";
+import Input from "@/modules/shared/input/Input";
 import { MainButton } from "@/components/ui/mainButton/mainButton";
 
 import styles from "./loginForm.module.scss";

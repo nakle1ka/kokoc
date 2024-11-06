@@ -1,29 +1,26 @@
 import React from 'react';
+import axios from 'axios';
 
-import { Banner } from '@/modules/matches/banner/banner';
+import { Banner } from '@/modules/shared/banner/banner';
 import { AllMatches } from '@/modules/matches/allMatches/allMatches';
+import { TMatch } from '@/types/matchType';
 
 type Props = {
 
 }
 
-const Matches: React.FC<Props> = ({ }) => {
+const Matches: React.FC<Props> = async ({ }) => {
+
+    const matches: TMatch[] = await (await axios.get('http://localhost:3000/api/getMatches')).data
+    const latestMatch: TMatch = await (await axios.get('http://localhost:3000/api/getMatches?latest=true')).data
+
     return (
         <>
             <Banner
-                date='10.11.2024 (вс)'
-                matchName='21 тур'
-                time='13:30'
-                t1Logo='https://www.lfl.ru/photo/clubs/big-size/876_623dd0aa850ee.png'
-                t1Name='Уралец'
-                t2Logo='/assets/logo.png'
-                t2Name='Кокос групп'
-                matchHref='/matches/1'
+                matchData={latestMatch}
             />
 
-            <AllMatches
-
-            />
+            <AllMatches matches={matches} />
         </>
     );
 }

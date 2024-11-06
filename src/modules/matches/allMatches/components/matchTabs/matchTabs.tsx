@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/tabs"
 import { MatchTable } from '../matchTable/matchTable';
 
-import { matchList } from '../../helpers/matchList';
-
+import { TMatch } from '@/types/matchType';
 
 type Props = {
-
+    matches: TMatch[];
 }
 
-export const MatchTabs: React.FC<Props> = ({ }) => {
+export const MatchTabs: React.FC<Props> = ({ matches }) => {
+
     return (
         <Tabs defaultValue="account">
             <TabsList>
@@ -25,13 +25,13 @@ export const MatchTabs: React.FC<Props> = ({ }) => {
 
             <TabsContent value="account">
                 <MatchTable
-                    data={matchList.filter(m => m.t1Points === -1)}
+                    data={matches.filter(m => m.t1points === -1)}
                 />
             </TabsContent>
 
             <TabsContent value="password">
                 <MatchTable 
-                    data={matchList.filter(m => m.t1Points !== -1)}
+                    data={matches.filter(m => m.t1points !== -1)}
                 />
             </TabsContent>
         </Tabs>

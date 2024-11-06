@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Metadata } from "next";
-import Pagination from "@/modules/pagination/Pagination";
+import Pagination from "@/modules/shared/pagination/Pagination";
 import ModalPayment from "../modalPayment/ModalPayment";
 
 import styles from "./purchaseTable.module.scss";

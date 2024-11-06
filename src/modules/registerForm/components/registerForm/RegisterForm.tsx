@@ -8,9 +8,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import Input from "@/modules/input/Input";
+import Input from "@/modules/shared/input/Input";
 import { MainButton } from "@/components/ui/mainButton/mainButton";
-import TextArea from "@/modules/textArea/TextArea";
+import TextArea from "@/modules/shared/textArea/TextArea";
 
 import {
   validateUsername,

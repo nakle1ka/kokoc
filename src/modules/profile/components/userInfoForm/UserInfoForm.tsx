@@ -3,10 +3,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
-import Input from "@/modules/input/Input";
+import Input from "@/modules/shared/input/Input";
 import { MainButton } from "@/components/ui/mainButton/mainButton";
 import { useStore } from "@/store/useStore";
-import TextArea from "@/modules/textArea/TextArea";
+import TextArea from "@/modules/shared/textArea/TextArea";
 import { Spinner } from "@/components/ui/spinner";
 import { Camera, User } from "lucide-react";
 import Image from "next/image";

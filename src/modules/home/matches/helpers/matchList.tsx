@@ -1,4 +1,4 @@
-import { TMatchItem, TTeam1, TTeam2 } from "../types";
+import { TMatchItem, TTeam1, TTeam2 } from "../../../../types/matchType";
 
 function getStat(
     kokocNumber: number, kokocPoints: number,

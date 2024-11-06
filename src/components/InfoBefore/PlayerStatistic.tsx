@@ -1,41 +1,52 @@
-import { FC } from 'react'
-import cl from './style/PlayerStatistic.module.scss'
 import Image from 'next/image'
-import { PlayerCardType } from '@/types/NewsOrPlayerCardType'
+
 import Logotype from '../ui/logotype/logotype'
-import im from '@/images/Снимок экрана (300).png'
 import logo from '@/images/KokocLogo.png'
-const PlayerStatistic: FC<Omit<PlayerCardType, 'player_id'>> = props => {
+
+import { FC } from 'react'
+import { TPlayer } from '@/types/playerType'
+
+import cl from './style/PlayerStatistic.module.scss'
+
+type Props = {
+	playerData: TPlayer
+}
+
+const PlayerStatistic: FC<Props> = ({ playerData }) => {
+	const splitName: string[] = playerData.FullName?.split(' ') || ['test', 'rwds']
+
 	return (
 		<div className={cl.Container}>
 			<div className={cl.LeftContainer}>
 				<Logotype
-					FirstWord={props.FullName.split(' ')[0]}
-					SecondWord={props.FullName.split(' ')[1]}
+					FirstWord={splitName[0]}
+					SecondWord={splitName[1]}
+					id={cl.fullName}
 				/>
 				<div className={cl.RoleAndNumber}>
-					<div>{props.role}</div>
-					<div>№{props.NumberInClub}</div>
+					<div>{playerData.role || 'Игрок'}</div>
+					<div>№{playerData.NumberInClub || " ?"}</div>
 				</div>
 				<div className={cl.Stats}>
 					<p>Вес:</p>
 					<p>Рост:</p>
 					<p>Дата рождения:</p>
-					<p>{props.Weight}кг</p>
-					<p>{props.Height}см</p>
-					<p> {props.DateOfBirth}</p>
+					<p>{playerData.Weight || "? "}кг</p>
+					<p>{playerData.Height || "? "}см</p>
+					<p> {playerData.DateOfBirth || "? "}</p>
 				</div>
 			</div>
+
 			<div className={cl.PlayerMain}>
-				<Image src={im} alt='Фото игрока' className={cl.PlayerImage} />
+				<img src={playerData.Photo} alt='Фото игрока' className={cl.PlayerImage} loading='lazy' />
 				<div className={cl.PlayStatistic}>
 					<div>
-						<span>{props.Goals}</span>
+						<span>{playerData.Goals}</span>
 						Голов
 					</div>
 					<Image src={logo} alt='' className={cl.LogoDecor} />
 					<div>
-						<span>{props.MatchesPlayed}</span>
+						<span>{playerData.MatchesPlayed}</span>
 						Матчев
 					</div>
 				</div>

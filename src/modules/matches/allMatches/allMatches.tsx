@@ -4,21 +4,20 @@ import { Container } from '@/components/container/container';
 import { Title } from '@/components/title/title';
 
 import { MatchTabs } from './components/matchTabs/matchTabs';
-
-import styles from './styles/allMatches.module.scss'
+import { TMatch } from '@/types/matchType';
 
 type Props = {
-
+    matches: TMatch[];
 }
 
-export const AllMatches: React.FC<Props> = ({}) => {
+export const AllMatches: React.FC<Props> = ({ matches }) => {
     return ( 
         <Container>
             <Title 
                 text='Все матчи'
             />
 
-            <MatchTabs />
+            <MatchTabs matches={matches} />
         </Container>
     );
 }
